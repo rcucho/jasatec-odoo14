@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <template id="report_sale_contract_document">
+        <template id="report_mrp_service_document">
             <t t-call="web.external_layout">
                 <t t-set="o" t-value="o.with_context(lang=lang)"/>
                 <t t-set="doc" t-value="o"/>
@@ -17,7 +17,7 @@
                         <t t-set="company" t-value="res_company"/>
                     </t>
                 </t>
-                <div class="page" style="text-align:justify; text-justify:inter-word; margin-right:5%; margin-left:10%;" t-if="o.planner_ajuste_contract_ids">
+                <div class="page" style="text-align:justify; text-justify:inter-word; margin-right:5%; margin-left:10%;">
                     <style>
 [class*="col"] > ol {
   padding-left: 13px;
@@ -38,10 +38,7 @@
   text-indent:-30px;
 }
                     </style>
-                    <t t-set="contract_client" t-value="o.partner_id"/>
-                    <t t-set="contract_plan" t-value="o.planner_ajuste_contract_ids[0]"/>
-                    <t t-set="contract_patient" t-value="contract_plan.medical_patient_id"/>
-                    <t t-set="contract_doctor" t-value="contract_plan.professional_id"/>
+                    <t t-set="service_client" t-value="o.partner_id"/>
                     <div class="oe_structure"/>
                     <div style="page-break-inside:avoid;" class="row text-center">
                         <div class="col h5">
@@ -66,48 +63,37 @@
                     </div>
                     <div style="margin-top:15px; page-break-inside:avoid;" class="row">
                         <div class="col">
-                            <span><b>Nombres y Apellidos:</b> <t t-esc="contract_client.registration_name or contract_client.name or ''"/></span>
+                            <span><b>Nombres y Apellidos:</b> <t t-esc="service_client.registration_name or service_client.name or ''"/></span>
                         </div>
                     </div>
                     <div style="page-break-inside:avoid;" class="row">
                         <div class="col-6">
                             <span>
                                 <b>Doc. Identidad:</b>
-                                <t t-if="contract_client.l10n_latam_identification_type_id" t-esc="contract_client.l10n_latam_identification_type_id.name + ' - '"/>
-                                <span t-field="contract_client.vat"/>
+                                <t t-if="service_client.l10n_latam_identification_type_id" t-esc="service_client.l10n_latam_identification_type_id.name + ' - '"/>
+                                <span t-field="service_client.vat"/>
                             </span>
                         </div>
+                    </div>
+                    <div style="page-break-inside:avoid;" class="row">
                         <div class="col-6">
-                            <span><b>Fecha de Nacimiento:</b> <span t-field="contract_patient.date_of_birth"/></span>
+                            <span><b>Correo:</b> <span t-field="service_client.email"/></span>
+                        </div>
+                        <div class="col-6">
+                            <span><b>Distrito:</b> <span t-field="service_client.l10n_pe_district"/></span>
                         </div>
                     </div>
                     <div style="page-break-inside:avoid;" class="row">
                         <div class="col-6">
-                            <span><b>Estado Civil:</b> <span t-field="contract_patient.marital_status"/></span>
+                            <span><b>Teléfono:</b> <span t-field="service_client.phone"/></span>
                         </div>
                         <div class="col-6">
-                            <span><b>Ocupación:</b> <span t-field="contract_client.function"/></span>
-                        </div>
-                    </div>
-                    <div style="page-break-inside:avoid;" class="row">
-                        <div class="col-6">
-                            <span><b>Correo:</b> <span t-field="contract_client.email"/></span>
-                        </div>
-                        <div class="col-6">
-                            <span><b>Distrito:</b> <span t-field="contract_client.l10n_pe_district"/></span>
-                        </div>
-                    </div>
-                    <div style="page-break-inside:avoid;" class="row">
-                        <div class="col-6">
-                            <span><b>Teléfono:</b> <span t-field="contract_client.phone"/></span>
-                        </div>
-                        <div class="col-6">
-                            <span><b>Celular:</b> <span t-field="contract_client.mobile"/></span>
+                            <span><b>Celular:</b> <span t-field="service_client.mobile"/></span>
                         </div>
                     </div>
                     <div style="page-break-inside:avoid;" class="row">
                         <div class="col">
-                            <span><b>Dirección:</b> <t t-esc="contract_patient.direccion and ', '.join(contract_patient.direccion.split('\n'))"/></span>
+                            <span><b>Dirección:</b> <t t-esc="service_patient.direccion and ', '.join(service_patient.direccion.split('\n'))"/></span>
                         </div>
                     </div>
                     <div style="margin-top:15px; page-break-inside:avoid;" class="row">
@@ -119,288 +105,14 @@
                             </b>
                         </div>
                     </div>
-                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <!--
-                            <ol style="list-style-position:inside;">
-                                <li data-prefix="2">COLUMNA CONECTADA S.A.C, localizada en Lima, inscrita en la partida electrónica N°14240965 del Registro de Personas Jurídicas de la Oficina Registral de LIMA.</li>
-                            </ol>
-                            -->
-                            <!--
-                            <span>2.1. COLUMNA CONECTADA S.A.C, localizada en Lima, inscrita en la partida electrónica N°14240965 del Registro de Personas Jurídicas de la Oficina Registral de LIMA.</span>
-                            -->
-                            <div class="especial-indent">
-                                <span>2.1. COLUMNA CONECTADA S.A.C, localizada en Lima, inscrita en la partida electrónica N°14240965 del Registro de Personas Jurídicas de la Oficina Registral de LIMA.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <b>
-                                <ol start="3" style="list-style-position:inside;">
-                                    <li><u>CONDICIONES DE ADHESIÓN</u></li>
-                                </ol>
-                            </b>
-                        </div>
-                    </div>
-                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
-                        <t t-set="sesiones" t-value="int(sum(contract_plan.plan_ajuste_id.line_ids.mapped('qty') or [0]))"/>
-                        <t t-set="ajustes" t-value="int(sum(contract_plan.plan_ajuste_id.line_ids.filtered(lambda r: 'ajuste' in r.appointment_route_ids.mapped('code')).mapped('qty') or [0]))"/>
-                        <t t-set="terapias" t-value="int(sum(contract_plan.plan_ajuste_id.line_ids.filtered(lambda r: 'terapia' in r.appointment_route_ids.mapped('code')).mapped('qty') or [0]))"/>
-                        <div class="col-4">
-                            <div class="especial-indent">
-                                <span>3.1. Plan de: <span t-esc="str(sesiones)"/> Sesiones</span>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="especial-indent">
-                                <span>3.2. Plazo: <span t-esc="str(round((sesiones/len(contract_plan.day_line_ids))/4, 2))"/> Meses</span>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="especial-indent">
-                                <span>3.3. <span t-esc="str(ajustes)"/> Ajustes <span t-esc="str(terapias)"/> Terapias</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <ol style="list-style-position:inside;" start="4">
-                                <li data-prefix="3">
-                                    Frecuencia recomendada: Fase 1: _ por _ semanas.
-                                    <span style="white-space:pre">	</span>
-                                    Fase 2: _ por _ semanas
-                                    <span style="white-space:pre">	</span>
-                                    Fase 3: _ por _ semanas
-                                </li>
-                            </ol>
-                        </div>
-                    </div>
-                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <b>
-                                <ol start="4" style="list-style-position:inside;">
-                                    <li><u>COSTO DE LOS SERVICIOS</u></li>
-                                </ol>
-                            </b>
-                        </div>
-                    </div>
-                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <div class="especial-indent">
-                                <span>4.1. Por los servicios contratados, EL CLIENTE pagará el valor total de</span>
-                                <span t-field="doc.amount_total"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="page-break-inside:avoid;" class="row">
-                        <div class="col" style="margin-left:6%;">
-                            <span>
-                                <ol style="list-style-position:inside; list-style-type:lower-alpha;" start="1">
-                                    <li>( <span t-if="o.planner_ajuste_reagendamientos not in [1,2]" t-esc="'X'"/> ) Opción Individual (sin descuento)</li>
-                                </ol>
-                            </span>
-                        </div>
-                    </div>
-                    <div style="page-break-inside:avoid;" class="row">
-                        <div class="col" style="margin-left:6%;">
-                            <span>
-                                <ol style="list-style-position:inside; list-style-type:lower-alpha;" start="2">
-                                    <li>( <span t-if="o.planner_ajuste_reagendamientos == 2" t-esc="'X'"/> ) Opción Flexible, descuento de 10%</li>
-                                </ol>
-                            </span>
-                        </div>
-                    </div>
-                    <div style="page-break-inside:avoid;" class="row">
-                        <div class="col" style="margin-left:6%;">
-                            <span>
-                                <ol style="list-style-position:inside; list-style-type:lower-alpha;" start="3">
-                                    <li>( <span t-if="o.planner_ajuste_reagendamientos == 1" t-esc="'X'"/> ) Opción Compromiso, descuento de 20%</li>
-                                </ol>
-                            </span>
-                        </div>
-                    </div>
-                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <b>
-                                <ol start="5" style="list-style-position:inside;">
-                                    <li><u>FORMA DE PAGO</u></li>
-                                </ol>
-                            </b>
-                        </div>
-                    </div>
-                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
-                        <div class="col-4">
-                            <div class="especial-indent">
-                                <span>5.1. El pago será hecho en:</span>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <span>
-                                ( ) Dinero efectivo
-                                <br/>
-                                ( ) Transferencia/Depósito
-                            </span>
-                        </div>
-                        <div class="col-4">
-                            <span>( ) Tarjeta de Débito/Crédito</span>
-                        </div>
-                    </div>
-                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <b>
-                                <ol start="6" style="list-style-position:inside;">
-                                    <li><u>CONDICIONES GENERALES</u></li>
-                                </ol>
-                            </b>
-                        </div>
-                    </div>
-                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <span>Sin perjuicio de lo dispuesto en las Condiciones Generales de Prestación de Servicios, examinadas en este acto, la prestación de servicios está subordinada a las siguientes condiciones:</span>
-                        </div>
-                    </div>
-                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <div class="especial-indent">
-                                <span>6.1. <u>Infraestructura</u>: COLUMNA CONECTADA SAC pondrá a disposición los servicios que hayan sido contratados de acuerdo con su cuadro de horarios y prestadores de servicios previamente establecidos.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <div class="especial-indent">
-                                <span>6.2. <u>Profesionales</u>: Nuestros profesionales capacitados estarán disponibles para atender al cliente adecuadamente.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <div class="especial-indent">
-                                <span>6.3. <u>Faltas</u>: La frecuencia de las consultas debe ser mantenida por los miembros de acuerdo con el horario determinado. Nuestros centros trabajan con horario agendado (citas). En general, en caso de imposibilidad de asistir a la atención, por favor avise con anticipación de por lo menos 24 horas, de lo contrario la no concurrencia, no lo exime del pago del mismo. Las consultas reprogramadas deben realizarse dentro de las <b>24 horas siguientes</b> para no afectar el resultado de los ajustes.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <span>
-                                <b>Caso tenga optado por la opción b) del numeral 4.1, podrá reprogramar hasta 2 citas como máximo. Caso tenga optado por la opción c) del numeral 4.1, sólo podrá reprogramar 1 cita. Una vez que no tengas más posibilidad de reprogramaciones sus inasistencias serán consideradas como servicios prestados.</b>
-                            </span>
-                        </div>
-                    </div>
-                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <span>Los casos de fuerza mayor debidamente justificados y sustentados no serán contabilizados ni como faltas ni como <b>reprogramaciones</b>.</span>
-                        </div>
-                    </div>
-                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <b>
-                                <ol start="7" style="list-style-position:inside;">
-                                    <li><u>CANCELACIÓN</u></li>
-                                </ol>
-                            </b>
-                        </div>
-                    </div>
-                    <div style="page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <div class="especial-indent">
-                                <span>7.1. El presente contrato podrá ser rescindido en cualquier momento, en este caso, de las sesiones realizadas se cobrará el valor de la sesión individual y descontado el valor del impuesto ya pagado y debidas tasas de tarjeta. Que serán resarcidos en hasta 10 días hábiles.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <div class="especial-indent">
-                                <span>7.2. En caso que COLUMNA CONECTADA SAC, quedase imposibilitada permanentemente de prestar los servicios contratados, el cliente será reembolsado en un 100% sobre el valor de las sesiones no utilizadas, a partir del momento en que su actividad sea interrumpida.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <div class="especial-indent">
-                                <span>7.3. Las sesiones podrán ser transferidas a amigos o familiares. Siendo obligatorio el mismo pasar por todos los procedimientos de la evaluación. En ese caso, se cargarán dos sesiones por el valor de la evaluación.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <div class="especial-indent">
-                                <span>7.4. En caso de que sea necesario interrumpir su cuidado Quiropráctico, converse de antemano con su Quiropráctico.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <b>
-                                <ol start="8" style="list-style-position:inside;">
-                                    <li><u>PLAZOS</u></li>
-                                </ol>
-                            </b>
-                        </div>
-                    </div>
-                    <div style="page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <div class="especial-indent">
-                                <span>8.1. Plazo: el presente contrato es firmado por un plazo determinado, el cual podrá ser renovado bajo condiciones vigentes en la época, pudiendo EL CLIENTE optar por cualquiera de los planes disponibles.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <div class="especial-indent">
-                                <span>8.2. Recuerde que: cada tipo de cuidado ofrece beneficio individual a los miembros de nuestra práctica y cada persona requiere de un tiempo específico para obtener los resultados deseados. El tiempo y la duración de las fases dependen de la condición inicial de la persona, que es determinada por la evaluación física, resultado de los exámenes de imagen, por nuestra experiencia en casos similares y de su evolución. El éxito y la evolución, depende del trabajo mutuo en el que ponemos toda nuestra dedicación, conocimiento y experiencia referente al suyo, sin embargo nada de eso servirá sin su esfuerzo y su dedicación.</span>
-                            </div>
-                        </div>
-                        <!--
-                        <div class="col" style="width:6%; margin-right:0px; padding-right:0px;">
-                            <span>8.2.</span>
-                        </div>
-                        <div class="col" style="width:94%; margin-left:0px; padding-left:0px;">
-                            <span>Plazo de validez del plan de cuidado: El CLIENTE siempre tendrá el doble de tiempo, estipulado en el numeral 3.2, para terminar los cuidados de quiroprácticos, de lo contrario, las mismas serán consideradas como servicios prestados.</span>
-                        </div>
-                        -->
-                    </div>
-                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
-                        <div class="col-4">
-                            <span>Inicio del Contrato: __/__/____</span>
-                        </div>
-                        <div class="col-4">
-                            <span>Fin del Contrato: __/__/____</span>
-                        </div>
-                    </div>
-                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <b>
-                                <ol start="9" style="list-style-position:inside;">
-                                    <li><u>DISPOSICIONES FINALES</u></li>
-                                </ol>
-                            </b>
-                            <span>Recuerde que: cada tipo de cuidado ofrece beneficio individual a los miembros de nuestra práctica y cada persona requiere de un tiempo específico para obtener los resultados deseados. El tiempo y la duración de las fases dependen de la condición inicial de la persona, que es determinada por la evaluación física, resultado de los exámenes de imagen, por nuestra experiencia en casos similares y de su evolución. El éxito y la evolución, depende del trabajo mutuo en el que ponemos toda nuestra dedicación, conocimiento y experiencia referente al suyo, sin embargo nada de eso servirá sin su esfuerzo y su dedicación.</span>
-                        </div>
-                    </div>
-                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <span>Para el éxito en sus cuidados, solicitamos que no se interrumpan.</span>
-                        </div>
-                    </div>
-                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
-                        <div class="col">
-                            <b>
-                                <ol start="10" style="list-style-position:inside;">
-                                    <li><u>DETALLE DE PAGOS</u></li>
-                                </ol>
-                            </b>
-                        </div>
-                    </div>
+                    <!--   modify    -->
+                    
                     <table class="table table-sm o_main_table" style="margin-top:15px;">
                         <thead>
                             <tr>
                                 <th name="th_description" class="text-left">Descripción</th>
-                                <th t-if="doc.order_line.mapped('planner_ajuste_line_ids')" name="th_rutas" class="text-right">Rutas</th>
                                 <th name="th_quantity" class="text-right">Cantidad</th>
                                 <th name="th_priceunit" class="text-right">Prec. Unit.</th>
-                                <th name="th_discount" t-if="display_discount" class="text-right" groups="product.group_discount_per_so_line">
                                     <span>Desc.%</span>
                                 </th>
                                 <th name="th_taxes" class="text-right">Impuestos</th>
@@ -410,58 +122,6 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody class="sale_tbody">
-                            <t t-set="current_subtotal" t-value="0"/>
-                            <t t-foreach="doc.order_line" t-as="line">
-                                <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
-                                <t t-set="current_subtotal" t-value="current_subtotal + line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
-                                <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
-                                    <t t-if="not line.display_type">
-                                        <td name="td_name"><span t-field="line.name"/></td>
-                                        <td t-if="line.planner_ajuste_line_ids" name="td_rutas" class="text-right">
-                                            <span t-esc="', '.join(line.planner_ajuste_line_ids[0].appointment_route_ids.mapped('name')) or ''"/>
-                                        </td>
-                                        <td name="td_quantity" class="text-right">
-                                            <span t-field="line.product_uom_qty"/>
-                                            <span t-field="line.product_uom" groups="uom.group_uom"/>
-                                        </td>
-                                        <td name="td_priceunit" class="text-right">
-                                            <span t-field="line.price_unit"/>
-                                        </td>
-                                        <td t-if="display_discount" class="text-right" groups="product.group_discount_per_so_line">
-                                            <span t-field="line.discount"/>
-                                        </td>
-                                        <td name="td_taxes" class="text-right">
-                                            <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_id))"/>
-                                        </td>
-                                        <td name="td_subtotal" class="text-right o_price_total">
-                                            <span t-field="line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
-                                            <span t-field="line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
-                                        </td>
-                                    </t>
-                                    <t t-if="line.display_type == 'line_section'">
-                                        <td name="td_section_line" colspan="99">
-                                            <span t-field="line.name"/>
-                                        </td>
-                                        <t t-set="current_section" t-value="line"/>
-                                        <t t-set="current_subtotal" t-value="0"/>
-                                    </t>
-                                    <t t-if="line.display_type == 'line_note'">
-                                        <td name="td_note_line" colspan="99">
-                                            <span t-field="line.name"/>
-                                        </td>
-                                    </t>
-                                </tr>
-                                <t t-if="current_section and (line_last or doc.order_line[line_index+1].display_type == 'line_section')">
-                                    <tr class="is-subtotal text-right">
-                                        <td name="td_section_subtotal" colspan="99">
-                                            <strong class="mr16">Subtotal</strong>
-                                            <span t-esc="current_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
-                                        </td>
-                                    </tr>
-                                </t>
-                            </t>
-                        </tbody>
                     </table>
                     <div class="clearfix" name="so_total_summary">
                         <div id="total" class="row" name="total">
@@ -473,27 +133,6 @@
                                             <span t-field="doc.amount_untaxed"/>
                                         </td>
                                     </tr>
-                                    <t t-foreach="doc.amount_by_group" t-as="amount_by_group">
-                                        <tr style="">
-                                            <t t-if="amount_by_group[5] == 1 and doc.amount_untaxed == amount_by_group[2]">
-                                                <td name="td_amount_by_group_label_3">
-                                                    <span t-esc="amount_by_group[0]"/>
-                                                    <span>&amp;nbsp;<span>on</span>&amp;nbsp;<t t-esc="amount_by_group[2]" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/></span>
-                                                </td>
-                                                <td name="td_amount_by_group_3" class="text-right o_price_total">
-                                                    <span t-esc="amount_by_group[1]" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
-                                                </td>
-                                            </t>
-                                            <t t-else="">
-                                                <td name="td_amount_by_group_label">
-                                                    <span t-esc="amount_by_group[0]"/>
-                                                </td>
-                                                <td name="td_amount_by_group" class="text-right o_price_total">
-                                                    <span t-esc="amount_by_group[1]" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
-                                                </td>
-                                            </t>
-                                        </tr>
-                                    </t>
                                     <tr class="border-black o_total">
                                         <td name="td_amount_total_label"><strong>Total</strong></td>
                                         <td name="td_amount_total" class="text-right">
@@ -518,7 +157,7 @@
                                 </td>
                                 <td style="border:none; width:10%;"/>
                                 <td style="border:none; width:40%; height:100px; max-height:100px;">
-                                    <t t-set="doctor_signature" t-value="contract_doctor.employee_id.user_id.digital_signature or o.user_id.digital_signature"/>
+                                    <t t-set="doctor_signature" t-value="service_doctor.employee_id.user_id.digital_signature or o.user_id.digital_signature"/>
                                     <img t-if="doctor_signature" t-att-src="image_data_uri(doctor_signature)" style="width:100%;" alt="Médico"/>
                                 </td>
                                 <td style="border:none; width:5%;"/>
@@ -526,15 +165,15 @@
                             <tr>
                                 <td style="border:none; width:5%;"/>
                                 <td style="border:none; border-top:1px solid black; width:40%; text-align:center;">
-                                    <span t-esc="contract_client.registration_name or contract_client.name or ''"/>
+                                    <span t-esc="service_client.registration_name or service_client.name or ''"/>
                                 </td>
                                 <td style="border:none; width:10%;"/>
                                 <td style="border:none; border-top:1px solid black; width:40%; text-align:center;">
-                                    <span t-field="contract_doctor.display_name"/>
+                                    <span t-field="service_client.name"/>
                                     <br/>
-                                    COLUMNA CONECTADA
+                                    JASATEC
                                     <br/>
-                                    CENTRO QUIROPRÁCTICO
+                                    GAAAA
                                 </td>
                                 <td style="border:none; width:5%;"/>
                             </tr>
@@ -545,11 +184,11 @@
             </t>
         </template>
         
-        <template id="report_sale_contract">
+        <template id="report_mrp_service">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
                     <t t-set="lang" t-value="user.sudo().lang"/>
-                    <t t-call="mstech_columna_conectada_1.report_sale_contract_document" t-lang="lang"/>
+                    <t t-call="mstech-jasatec2.report_mrp_service_document" t-lang="lang"/>
                 </t>
             </t>
         </template>
