@@ -10,7 +10,7 @@
     ],
     'data': [
         'views/report_mrp_jasatec.xml',
-        'report/report_sale_contract.xml',
+        'report/report_mrp_service.xml',
     ],
     'installable': True,
     'auto_install': False,
