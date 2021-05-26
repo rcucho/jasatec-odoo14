@@ -10,4 +10,4 @@ class FormulariosColumnaConectada(models.Model):
     sale_order_date = fields.Datetime(related='sale_order_id.date_order', readonly=True, string="Fecha Orden de Venta")
     parent_res_contact=fields.Char(related='partner_id.child_ids.name', readonly=True, string="Contacto relacionado")
     parent_contact_function=fields.Char(related='partner_id.child_ids.function', readonly=True, striing="Puesto contacto relacionado")
-    partner_province=fields.Char(related='partner_id.state_id', readonly=True)
+    partner_province=fields.Char(related='partner_id.state_id.name', readonly=True)
