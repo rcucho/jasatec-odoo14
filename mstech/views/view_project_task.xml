@@ -20,7 +20,7 @@
 							<span><b>1.ANTECEDENTES</b></span><br/>
 							<span> Por requerimiento de la empresa <field name="partner_id" readonly="1"/> con <field name="partner_type_vat" readonly="1"/> - <field name="partner_number_vat" readonly="1"/> 
 								se le remitió la Cotización N° <field name="sale_line_id" readonly="1"/>, de fecha <field name="sale_order_date" readonly="1"/> respecto al 
-								<field name="name" readonly="1"/> ubicados en la ciudad de <field name="partner_city" readonly="1"/>. Luego, nos indican que aceptan nuestra cotización y que se realizará el servicio en el 
+								<field name="name" readonly="1"/> ubicados en la ciudad de <field name="partner_city" readonly="1"/>.<br/>Luego, nos indican que aceptan nuestra cotización y que se realizará el servicio en el 
 								mes de __. De inmediato nuestra empresa realizó las coordinaciones con <field name="parent_res_contact"/>, <field name="parent_contact_function"/> de <field name="partner_id" readonly="1"/> 
 								y se programó el servicio técnico para el día <field name="planned_date_begin"/>.
 							</span>
