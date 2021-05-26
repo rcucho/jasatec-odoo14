@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-	<record id="view_project_task_technical" model="ir.actions.report">
+	<record id="view_project_task_technical" model="ir.ui.view">
 		<field name="name">project.task.technical</field>
 		<field name="model">project.task</field>
 		<field name="inherit_id" ref="project.view_task_form2"/>
