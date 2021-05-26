@@ -31,7 +31,7 @@
 							<div class="especial-indent">
 								<span>El servicio de mantenimiento preventivo de <field name="name" readonly="1"/> se realizó los días <field name="planned_date_begin"/> al <field name="planned_date_end"/>,en las 
 									instalaciones de <field name="partner_id" readonly="1"/>, ubicada en <field name="partner_street" readonly="1"/> en la ciudad de <field name="partner_city" readonly="1"/>,
-									provincia de __, departamento de <field name="partner_province">.
+									provincia de __, departamento de <field name="partner_province"/>.
 								</span>
 							</div>
 						</div>
