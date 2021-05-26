@@ -7,7 +7,7 @@
     'website': 'http://www.mstech.pe',
     'depends': [
         'industry_fsm',
-        'sale',
+        'sale_project',
     ],
     'data': [
         'views/view_project_task.xml',
