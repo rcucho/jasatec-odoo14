@@ -16,6 +16,21 @@
 								<span><field name="partner_type_vat"/>: <field name="partner_number_vat" readonly="1"/></span>
 							</div>
 						</div>
+						<div class="row col">
+							<b>
+								<ol start="1" style="list-style-position:inside;">
+									<li><u>ANTECENDENTES</u></li>
+								</ol>
+							</b>
+							<span> Por requerimiento de la empresa <field name="partner_id" readonly="1"/> con <field name="partner_type_vat" readonly="1"/> - <field name="partner_number_vat" readonly="1"/> 
+								se le remitió la Cotización N° <field name="sale_line_id" readonly="1"/>, de fecha <field name="sale_order_date"/> respecto al 
+								<field name="name"/> ubicados en la ciudad de <field name="partner_city"/>. Luego, durante el mes de __ nos indican 
+								que aceptan nuestra cotización y que se realizará el servicio en el mes de __. De inmediato nuestra empresa realizó las coordinaciones con el señor __,
+								Gerente de __ y se programó el servicio técnico para el día __.
+							</span>
+						</div>
+						
+						
 					</page>
 				</xpath>
 			</data>
