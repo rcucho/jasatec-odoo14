@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_project_task_technical" model="ir.actions.report">
+			<field name="name">project.task.technical</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+				<data>
+					<xpath expr="//notebook" position="inside">
+						<page name="report_technical" string="Informe Tecnico">
+							<div class = "col-row text-center">
+								<div class="col h5">
+									<span>
+										<b>INFORME TECNICO N°<field name="id"/>-2021-JASATEC/AST</b>
+									</span>
+                                    <span>Cliente: <field name="partner_id"/></span>
+                                    <span><field name="partner_id.l10n_latam_identification_type_id.name"/>: <field name="partner_id.vat"/></span>
+                                </div>
+							</div>
+							
+							
+						</page>
+					</xpath>
+				</data>
+        </record>
+    </data>
+</odoo>
