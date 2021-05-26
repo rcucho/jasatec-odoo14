@@ -19,7 +19,7 @@
 						<div class="row col">
 							<span><b>1.ANTECEDENTES</b></span><br/>
 							<span> Por requerimiento de la empresa <field name="partner_id" readonly="1"/> con <field name="partner_type_vat" readonly="1"/> - <field name="partner_number_vat" readonly="1"/> 
-								se le remitió la Cotización N° <field name="sale_line_id" readonly="1" groups="sales_team.group_sale_salesman"/>, de fecha <!-- <field name="sale_order_date"/> -->respecto al 
+								se le remitió la Cotización N° <!--<field name="sale_line_id" readonly="1"/>-->, de fecha <!-- <field name="sale_order_date"/> -->respecto al 
 								<field name="name"/> ubicados en la ciudad de <field name="partner_city"/>. Luego, durante el mes de __ nos indican 
 								que aceptan nuestra cotización y que se realizará el servicio en el mes de __. De inmediato nuestra empresa realizó las coordinaciones con el señor __,
 								Gerente de __ y se programó el servicio técnico para el día __.
