@@ -13,7 +13,7 @@
 							<div class="col h5">
 								<span><b>INFORME TECNICO N°<field name="id" readonly="1"/>-2021-JASATEC/AST</b></span><br/>
 								<span>Cliente: <field name="partner_id" readonly="1"/></span><br/>
-								<span><field name="partner_id" readonly="1"/>: <field name="partner_id" readonly="1"/></span>
+								<span><field name="partner_type_vat"/>: <field name="partner_number_vat" readonly="1"/></span>
 							</div>
 						</div>
 					</page>
