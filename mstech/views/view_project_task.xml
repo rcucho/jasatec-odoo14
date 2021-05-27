@@ -75,7 +75,7 @@
 							</table>
 						</div>
 						<div class="col row">
-							<br/><span><b><u>3. DESARROLLO DEL SERVICIO</u></b><br/>3.1. Se realizaron las siguientes actividades:</span><br/>
+							<br/><span><b><u>3. DESARROLLO DEL SERVICIO</u></b><br/>Se realizaron las siguientes actividades:</span><br/>
 						</div>
 						<div class="col row">
 							<field name="description" readonly="1"/>
@@ -83,6 +83,11 @@
 						<div class="row col">
 							<span><b><u>4. REGISTRO FOTOGRAFICO</u></b></span><br/>
 						</div>
+						<div class="row col">
+							<span><b><u>5. CONCLUSIONES Y RECOMENDACIONES</u></b></span><br/>
+							<field name="description_conclusion"/>
+						</div>
+						
 						
 					</page>
 				</xpath>
