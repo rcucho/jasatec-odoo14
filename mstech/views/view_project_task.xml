@@ -90,6 +90,7 @@
 						<div class="row-col-md-4 text-center">
 							<field name="employee_signature" widget="signature"/>
 							<span><br/><b><field name="timesheets_employee_name"/></b><br/></span>
+							<field name="timesheets_employee_function"/>
 						</div>
 						
 					</page>
