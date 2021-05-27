@@ -42,14 +42,14 @@
 									<tr>
 										<th name="th_number_pe" class="text-center">N°</th>
 										<th name="th_names" class="text-center">Apellidos y nombres</th>
-										<th name="th_dni" class="text-center"><field name="timesheets_employee_type_vat"/></th>
+										<th name="th_dni" class="text-center"><field name="create_type_vat"/></th>
 										<th name="th_position" class="text-center">Cargo</th>
 									</tr>
 								</thead>
 								<tbody class="personal_tbody">
 									<td name="td_number_pe" class="text-center">1</td>
 									<td name="td_names_pe" class="text-center"><field name="timesheets_employee_name"/></td>
-									<td name="td_dni_pe" class="text-center"><field name="timesheets_employee_number_vat"/></td>
+									<td name="td_dni_pe" class="text-center"><field name="timesheets_employee_number_ident"/></td>
 									<td name="td_position_pe" class="text-center"><field name="timesheets_employee_function"/></td>
 								</tbody>
 							</table>
