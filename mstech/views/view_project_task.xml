@@ -96,6 +96,11 @@
 						
 					</page>
 				</xpath>
+				<xpath expr="//notebook[@name='report_technical']" position="after">
+					<page name="herramientas_transfe" string="Herramientas">
+						<field name="herramientas_project" widget="many2many"/>
+					</page>
+				</xpath>
 			</data>
 		</field>
         </record>
