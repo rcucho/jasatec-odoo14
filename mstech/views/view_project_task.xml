@@ -34,7 +34,26 @@
 								</span>
 							</div>
 						</div>
-						
+						<div class="col">
+							<span><b>2.2. Personal tecnico:</b></span><br/>
+							<span>Para el presente servicio se asignó el personal técnico se detalla a continuación:</span>
+							<table class="table table-sm o_main_table">
+								<thead>
+									<tr>
+										<th name="th_number_pe" class="text-center">N°</th>
+										<th name="th_names" class="text-center">Apellidos y nombres</th>
+										<th name="th_dni" class="text-center"><field name="create_type_vat"/></th>
+										<th name="th_position" class="text-center">Cargo</th>
+									</tr>
+								</thead>
+								<tbody class="personal_tbody">
+									<td name="td_number_pe" class="text-center">1</td>
+									<td name="td_names_pe" class="text-center"><field name="create_uid"/></td>
+									<td name="td_dni_pe" class="text-center"><field name="create_type_vat"/></td>
+									<td name="td_position_pe" class="text-center"><field name="create_function"/></td>
+								</tbody>
+							</table>
+						</div>
 						
 					</page>
 				</xpath>
