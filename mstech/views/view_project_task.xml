@@ -17,7 +17,7 @@
 							</div>
 						</div>
 						<div class="row col">
-							<span><b><u>1. ANTECEDENTES</u></b></span><br/>
+							<br/><span><b><u>1. ANTECEDENTES</u></b></span><br/>
 							<span> Por requerimiento de la empresa <field name="partner_id" readonly="1"/> con <field name="partner_type_vat" readonly="1"/> - <field name="partner_number_vat" readonly="1"/> 
 								se le remitió la Cotización N° <field name="sale_line_id" readonly="1"/>, de fecha <field name="sale_order_date" readonly="1"/> respecto al 
 								<field name="name" readonly="1"/> ubicados en la ciudad de <field name="partner_city" readonly="1"/>.<br/>Luego, nos indican que aceptan nuestra cotización y que se realizará el servicio en el 
@@ -26,7 +26,7 @@
 							</span>
 						</div>
 						<div class="row col">
-							<span><b><u>2. DATOS DEL SERVICIO</u><br/>2.1. Fecha y Lugar:</b></span>
+							<br/><span><b><u>2. DATOS DEL SERVICIO</u><br/>2.1. Fecha y Lugar:</b></span>
 							<div class="especial-indent">
 								<span>El servicio de mantenimiento preventivo de <field name="name" readonly="1"/> se realizó los días <field name="planned_date_begin"/> al <field name="planned_date_end"/>,en las 
 									instalaciones de <field name="partner_id" readonly="1"/>, ubicada en <field name="partner_street" readonly="1"/> en la ciudad de <field name="partner_city" readonly="1"/>,
@@ -75,7 +75,9 @@
 							</table>
 						</div>
 						<div class="col row">
-							<span><b><u>3. DESARROLLO DEL SERVICIO</u><br/>3.1. Se realizaron las siguientes actividades:</b></span><br/>
+							<br/><span><b><u>3. DESARROLLO DEL SERVICIO</u></b><br/>3.1. Se realizaron las siguientes actividades:</span><br/>
+						</div>
+						<div class="col row">
 							<field name="description" readonly="1"/>
 						</div>
 						<div class="row col">
