@@ -27,4 +27,4 @@ class FormulariosColumnaConectada(models.Model):
     description_conclusion = fields.Text(string="Conclusiones y Recomendaciones")
     
     employee_signature = fields.Binary(string="Firma de empleado")
-    state_payment_invoice = fields.Char(related='sale_order_id.invoice_ids.payment_state', readonly=True)
+    state_payment_invoice = fields.Selection(related='sale_order_id.invoice_ids.payment_state', readonly=True)
