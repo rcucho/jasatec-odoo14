@@ -7,6 +7,9 @@
 		<field name="inherit_id" ref="project.view_task_form2"/>
 		<field name="arch" type="xml">
 			<data>
+				<xpath expr="//field[@name='sale_line_id']" position="after">
+					<field name='invoice_status'/>
+				</xpath>
 				<xpath expr="//notebook" position="inside">
 					<page name="report_technical" string="Informe Tecnico">
 						<div class="col-row text-center">
