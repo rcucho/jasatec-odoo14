@@ -9,6 +9,7 @@
 			<data>
 				<xpath expr="//field[@name='sale_line_id']" position="after">
 					<field name='invoice_status'/>
+					<field name='state_payment_invoice'/>
 				</xpath>
 				<xpath expr="//notebook" position="inside">
 					<page name="report_technical" string="Informe Tecnico">
