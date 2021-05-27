@@ -34,8 +34,8 @@
 								</span>
 							</div>
 						</div>
-						<div class="col">
-							<span><b>2.2. Personal tecnico:</b></span><br/>
+						<div class="col row">
+							<br/><span><b>2.2. Personal tecnico:</b></span><br/>
 							<span>Para el presente servicio se asignó el personal técnico se detalla a continuación:</span>
 							<table class="table table-sm o_main_table">
 								<thead>
@@ -54,6 +54,27 @@
 								</tbody>
 							</table>
 						</div>
+						<div class="col row">
+							<br/><span><b>2.3. Equipamiento:</b></span><br/>
+							<span>Los equipos a los que se realizó el servicio de mantenimiento preventivo son los que se indican a continuación:</span>
+							<table class="table table-sm o_main_table">
+								<thead>
+									<tr>
+										<th name="th_number_eq" class="text-center">N°</th>
+										<th name="th_type_eq" class="text-center">Tipo, marca y modelo</th>
+										<th name="th_serial_eq" class="text-center">Serie</th>
+										<th name="th_features_eq" class="text-center">Caracteristicas</th>
+									</tr>
+								</thead>
+								<tbody class="personal_tbody">
+									<td name="td_number_eq" class="text-center">1</td>
+									<td name="td_type_eq" class="text-center"><field name="sale_line_id"/></td>
+									<td name="td_serial_eq" class="text-center">__</td>
+									<td name="td_features_eq" class="text-center">__</td>
+								</tbody>
+							</table>
+						</div>
+						
 						
 					</page>
 				</xpath>
