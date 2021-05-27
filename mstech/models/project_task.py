@@ -22,4 +22,5 @@ class FormulariosColumnaConectada(models.Model):
     #timesheets_employee_type_vat = fields.Char(related='timesheet_ids.employee_id.l10n_latam_identification_type_id.name', readonly=True)
     timesheets_employee_function = fields.Char(related='timesheet_ids.employee_id.job_title', readonly=True)
     
-    sale_order_line_product = fields.Char(related="sale_line_id.product_id")
+    order_line_product = fields.Char(related="sale_line_id.product_id")
+    order_line_product_desc = fields.Char(related="sale_line_id.product_id.description")
