@@ -23,4 +23,4 @@ class FormulariosColumnaConectada(models.Model):
     timesheets_employee_function = fields.Char(related='timesheet_ids.employee_id.job_title', readonly=True)
     
     order_line_product = fields.Many2one(related="sale_line_id.product_id")
-    order_line_product_desc = fields.Char(related="sale_line_id.product_id.description")
+    order_line_product_desc = fields.Text(related="sale_line_id.product_id.description")
