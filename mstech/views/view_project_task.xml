@@ -88,7 +88,7 @@
 							<field name="description_conclusion"/>
 						</div>
 						<div class="row col text-center">
-							<field name="employee_signature"/>
+							<field name="employee_signature" widget="signature"/>
 							<br/><span><b><field name="timesheets_employee_name"/></b></span><br/>
 						</div>
 						
