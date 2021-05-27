@@ -24,3 +24,4 @@ class FormulariosColumnaConectada(models.Model):
     
     order_line_product = fields.Many2one(related="sale_line_id.product_id", readonly=False)
     order_line_product_desc = fields.Text(related="sale_line_id.product_id.description")
+    description_conclusion = fields.Text(string="Conclusiones y Recomendaciones")
