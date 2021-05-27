@@ -17,7 +17,7 @@
 							</div>
 						</div>
 						<div class="row col">
-							<br/><span><b><u>1. ANTECEDENTES</u></b></span><br/>
+							<span><br/><b><u>1. ANTECEDENTES</u></b><br/></span>
 							<span> Por requerimiento de la empresa <field name="partner_id" readonly="1"/> con <field name="partner_type_vat" readonly="1"/> - <field name="partner_number_vat" readonly="1"/> 
 								se le remitió la Cotización N° <field name="sale_line_id" readonly="1"/>, de fecha <field name="sale_order_date" readonly="1"/> respecto al 
 								<field name="name" readonly="1"/> ubicados en la ciudad de <field name="partner_city" readonly="1"/>.<br/>Luego, nos indican que aceptan nuestra cotización y que se realizará el servicio en el 
@@ -26,7 +26,7 @@
 							</span>
 						</div>
 						<div class="row col">
-							<br/><span><b><u>2. DATOS DEL SERVICIO</u><br/>2.1. Fecha y Lugar:</b></span>
+							<span><br/><b><u>2. DATOS DEL SERVICIO</u><br/>2.1. Fecha y Lugar:</b><br/></span>
 							<div class="especial-indent">
 								<span>El servicio de mantenimiento preventivo de <field name="name" readonly="1"/> se realizó los días <field name="planned_date_begin"/> al <field name="planned_date_end"/>,en las 
 									instalaciones de <field name="partner_id" readonly="1"/>, ubicada en <field name="partner_street" readonly="1"/> en la ciudad de <field name="partner_city" readonly="1"/>,
@@ -35,7 +35,7 @@
 							</div>
 						</div>
 						<div class="col row">
-							<br/><span><b>2.2. Personal tecnico:</b></span><br/>
+							<span><br/><b>2.2. Personal tecnico:</b><br/></span>
 							<span>Para el presente servicio se asignó el personal técnico se detalla a continuación:</span>
 							<table class="table table-sm o_main_table">
 								<thead>
@@ -55,7 +55,7 @@
 							</table>
 						</div>
 						<div class="col row">
-							<br/><span><b>2.3. Equipamiento:</b></span><br/>
+							<span><br/><b>2.3. Equipamiento:</b><br/></span>
 							<span>Los equipos a los que se realizó el servicio de mantenimiento preventivo son los que se indican a continuación:</span>
 							<table class="table table-sm o_main_table">
 								<thead>
@@ -75,21 +75,21 @@
 							</table>
 						</div>
 						<div class="col row">
-							<br/><span><b><u>3. DESARROLLO DEL SERVICIO</u></b><br/>Se realizaron las siguientes actividades:</span><br/>
+							<span><br/><b><u>3. DESARROLLO DEL SERVICIO</u></b><br/>Se realizaron las siguientes actividades:<br/></span>
 						</div>
 						<div class="col row">
 							<field name="description" readonly="1"/>
 						</div>
 						<div class="row col">
-							<br/><span><b><u>4. REGISTRO FOTOGRAFICO</u></b></span><br/>
+							<span><br/><b><u>4. REGISTRO FOTOGRAFICO</u></b><br/></span>
 						</div>
 						<div class="row col">
-							<br/><span><b><u>5. CONCLUSIONES Y RECOMENDACIONES</u></b></span><br/>
+							<span><br/><b><u>5. CONCLUSIONES Y RECOMENDACIONES</u></b><br/></span>
 							<field name="description_conclusion"/>
 						</div>
 						<div class="row-col-md-4 text-center">
 							<field name="employee_signature" widget="signature"/>
-							<br/><span><b><field name="timesheets_employee_name"/></b></span><br/>
+							<span><br/><b><field name="timesheets_employee_name"/></b><br/></span>
 						</div>
 						
 					</page>
