@@ -18,4 +18,6 @@ class FormulariosColumnaConectada(models.Model):
     create_type_vat = fields.Char(related='create_uid.l10n_latam_identification_type_id.name', readonly=True)
     
     timesheets_employee_name = fields.Char(related='timesheet_ids.employee_id.name', readonly=True)
+    timesheets_employee_number_vat = fields.Char(related='timesheet_ids.employee_id.vat', readonly=True)
+    timesheets_employee_type_vat = fields.Char(related='timesheet_ids.employee_id.l10n_latam_identification_type_id.name', readonly=True)
     timesheets_employee_function = fields.Char(related='timesheet_ids.employee_id.function', readonly=True)
