@@ -68,9 +68,9 @@
 								</thead>
 								<tbody class="personal_tbody">
 									<td name="td_number_eq" class="text-center">1</td>
-									<td name="td_type_eq" class="text-center"><field name="sale_line_id"/></td>
+									<td name="td_type_eq" class="text-center"><field name="order_line_product"/></td>
 									<td name="td_serial_eq" class="text-center">__</td>
-									<td name="td_features_eq" class="text-center">__</td>
+									<td name="td_features_eq" class="text-center"><field name="order_line_product_desc"/></td>
 								</tbody>
 							</table>
 						</div>
