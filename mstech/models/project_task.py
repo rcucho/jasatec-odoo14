@@ -11,4 +11,6 @@ class FormulariosColumnaConectada(models.Model):
     parent_res_contact = fields.Char(related='partner_id.child_ids.name', readonly=True, string="Contacto relacionado")
     parent_contact_function = fields.Char(related='partner_id.child_ids.function', readonly=True, striing="Puesto contacto relacionado")
     partner_province = fields.Char(related='partner_id.state_id.name', readonly=True)
-    created_function = fields.Char(related='create_uid.function', readonly=True)
+    create_function = fields.Char(related='create_uid.function', readonly=True)
+    create_type_vat = fields.Char(related='create_uid.vat', readonly=True)
+    create_number_vat = fields.Char(related='create_uid.l10n_latam_identification_type_id.name', readonly=True)
