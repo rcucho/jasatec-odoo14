@@ -47,7 +47,7 @@
 						</div>
 						<div class="row col">
 							<span><br/><b>2.2. Personal tecnico:</b><br/>Para el presente servicio se asignó el personal técnico se detalla a continuación:<br/></span>
-							<table class="table table-sm o_main_table">
+							<!--<table class="table table-sm o_main_table">
 								<thead>
 									<tr>
 										<th name="th_number_pe" class="text-center">N°</th>
@@ -57,21 +57,15 @@
 									</tr>
 								</thead>
 								<tbody class="personal_tbody row">
-									<!--<t t-set="loop1" t-value="1"/>-->
 									<t t-foreach="timesheet_ids.employee_id" t-as="timesheets_employee">
-										<!--<td name="td_number_pe" class="text-center"><t t-esc="loop1"/></td>-->
-										<td name="td_number_pe" class="text-center"><span t-field="timesheets_employee.id"/><!--<field name="timesheets_employee_id"/>--></td>
+										<td name="td_number_pe" class="text-center"><span t-field="timesheets_employee.id"/></td>
 										<td name="td_names_pe" class="text-center"><field name="timesheets_employee_name"/></td>
 										<td name="td_dni_pe" class="text-center"><field name="timesheets_employee_number_ident"/></td>
 										<td name="td_position_pe" class="text-center"><field name="timesheets_employee_function"/></td>
-										<!--<td name="td_number1_pe" class="text-center"><span t-field="loop1.product"/></td>
-										<td name="td_number2_pe" class="text-center"><span t-field="time_emplo.display_name"/></td>
-										<td name="td_number3_pe" class="text-center"><span t-field="time_emplo.display_name"/></td>
-										<td name="td_number4_pe" class="text-center"><span t-field="time_emplo.display_name"/></td>
-										<t t-set="loop1" t-value"loop1+1"/>-->
 									</t>
 								</tbody>
-							</table>
+							</table>-->
+							<field name="timesheet.ids" readonly="1"/>
 						</div>
 						<div class="row col">
 							<span><br/><b>2.3. Equipamiento:</b><br/>Los equipos a los que se realizó el servicio de mantenimiento preventivo son los que se indican a continuación:<br/></span>
