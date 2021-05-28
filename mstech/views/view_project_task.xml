@@ -8,7 +8,7 @@
 		<field name="arch" type="xml">
 			<data>
 				<xpath expr="//field[@name='sale_line_id']" position="after">
-					<field name='state_payment_invoice' widget="badge" decoration-success="state_payment_invoice == 'paid'"/>
+					<field name='state_payment_invoice' widget="badge" decoration-success="state_payment_invoice == 'paid'" decoration-info="state_payment_invoice == 'partial' or state_payment_invoice == 'in_payment'"/>
 				</xpath>
 				<xpath expr="//notebook" position="inside">
 					<page name="herramientas_transfe" string="Herramientas">
