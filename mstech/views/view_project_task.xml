@@ -68,6 +68,7 @@
 									<td name="td_features_eq" class="text-center"><field name="order_line_product_desc"/></td>
 								</tbody>
 							</table>
+							<field name="order_line_m2m"/>
 						</div>
 						<div class="col row">
 							<span><br/><b><u>3. DESARROLLO DEL SERVICIO</u></b><br/>Se realizaron las siguientes actividades:<br/></span>
