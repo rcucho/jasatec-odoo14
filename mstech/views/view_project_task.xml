@@ -23,7 +23,7 @@
 						<div class="col-row text-center">
 							<div class="col h5">
 								<span><b>INFORME TECNICO N°<field name="id" readonly="1"/>-2021-JASATEC/AST</b></span><br/>
-								<span>Cliente: <field name="partner_id" readonly="1"/>-</span><span t-esc="partner_id"/><br/>
+								<span>Cliente: <field name="partner_id" readonly="1"/><br/>
 								<span><field name="partner_type_vat"/>: <field name="partner_number_vat" readonly="1"/></span>
 							</div>
 						</div>
@@ -47,25 +47,7 @@
 						</div>
 						<div class="row col">
 							<span><br/><b>2.2. Personal tecnico:</b><br/>Para el presente servicio se asignó el personal técnico se detalla a continuación:<br/></span>
-							<!--<table class="table table-sm o_main_table">
-								<thead>
-									<tr>
-										<th name="th_number_pe" class="text-center">N°</th>
-										<th name="th_names" class="text-center">Apellidos y nombres</th>
-										<th name="th_dni" class="text-center"><field name="create_type_vat"/></th>
-										<th name="th_position" class="text-center">Cargo</th>
-									</tr>
-								</thead>
-								<tbody class="personal_tbody row">
-									<t t-foreach="timesheet_ids.employee_id" t-as="timesheets_employee">
-										<td name="td_number_pe" class="text-center"><span t-field="timesheets_employee.id"/></td>
-										<td name="td_names_pe" class="text-center"><field name="timesheets_employee_name"/></td>
-										<td name="td_dni_pe" class="text-center"><field name="timesheets_employee_number_ident"/></td>
-										<td name="td_position_pe" class="text-center"><field name="timesheets_employee_function"/></td>
-									</t>
-								</tbody>
-							</table>-->
-							<field name="timesheets_employee"/>
+							<!--<field name="timesheets_employee"/>-->
 							<field name="timesheet_ids" readonly="1"/>
 						</div>
 						<div class="row col">
