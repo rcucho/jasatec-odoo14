@@ -60,7 +60,7 @@
 									<!--<t t-set="loop1" t-value="1"/>-->
 									<t t-foreach="timesheet_ids.employee_id" t-as="timesheets_employee">
 										<!--<td name="td_number_pe" class="text-center"><t t-esc="loop1"/></td>-->
-										<td name="td_number_pe" class="text-center"><field name="timesheets_employee_id"/></td>
+										<td name="td_number_pe" class="text-center"><span t-field="timesheets_employee.id"/><!--<field name="timesheets_employee_id"/>--></td>
 										<td name="td_names_pe" class="text-center"><field name="timesheets_employee_name"/></td>
 										<td name="td_dni_pe" class="text-center"><field name="timesheets_employee_number_ident"/></td>
 										<td name="td_position_pe" class="text-center"><field name="timesheets_employee_function"/></td>
