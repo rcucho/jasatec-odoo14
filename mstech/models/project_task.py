@@ -24,7 +24,7 @@ class FormulariosColumnaConectada(models.Model):
     #timesheets_employee_type_vat = fields.Char(related='timesheet_ids.employee_id.l10n_latam_identification_type_id.name', readonly=True)
     timesheets_employee_function = fields.Char(related='timesheet_ids.employee_id.job_title', readonly=True)
     #
-    order_line_m2m = fields.Many2many('order.order.line', relation='orde_line_proj', colum1='order_id', colum2='name', string='Pedido de orden de venta')
+    order_line_m2m = fields.Many2many('sale.order.line', relation='orde_line_proj', colum1='order_id', colum2='name', string='Pedido de orden de venta')
     #
     order_line_product = fields.Many2one(related="sale_line_id.product_id", readonly=False)
     order_line_product_desc = fields.Text(related="sale_line_id.product_id.description")
