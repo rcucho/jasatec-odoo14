@@ -8,7 +8,15 @@
 		<field name="arch" type="xml">
 			<data>
 				<xpath expr="//field[@name='sale_line_id']" position="after">
-					<field name='state_payment_invoice'/>
+					<field name='state_payment_invoice' widget="selection_badge"/>
+				</xpath>
+				<xpath expr="//notebook" position="inside">
+					<page name="herramientas_transfe" string="Herramientas">
+						<div class="col">
+							<label for="herramientas_project"/>
+							<field name="herramientas_project" widget="many2many" domain="[('picking_type_code','=','internal'),('state','=','draft')]"/>
+						</div>
+					</page>
 				</xpath>
 				<xpath expr="//notebook" position="inside">
 					<page name="report_technical" string="Informe Tecnico">
@@ -96,14 +104,7 @@
 						
 					</page>
 				</xpath>
-				<xpath expr="//notebook" position="inside">
-					<page name="herramientas_transfe" string="Herramientas">
-						<div class="col">
-							<label for="herramientas_project"/>
-							<field name="herramientas_project" widget="many2many" domain="[('picking_type_code','=','internal'),('state','=','draft')]"/>
-						</div>
-					</page>
-				</xpath>
+				
 			</data>
 		</field>
         </record>
