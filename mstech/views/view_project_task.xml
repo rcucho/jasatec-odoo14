@@ -67,7 +67,7 @@
 										<td name="td_number2_pe" class="text-center"><span t-field="time_emplo.display_name"/></td>
 										<td name="td_number3_pe" class="text-center"><span t-field="time_emplo.display_name"/></td>
 										<td name="td_number4_pe" class="text-center"><span t-field="time_emplo.display_name"/></td>
-										<!--<t t-set="loop1" t-value"loop1+1"/>-->
+										<t t-set="loop1" t-value"loop1+1"/>-->
 									</t>
 								</tbody>
 							</table>
