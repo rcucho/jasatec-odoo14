@@ -9,6 +9,7 @@
         'industry_fsm',
         'sale_project',
         'industry_fsm_sale',
+        'sale',
     ],
     'data': [
         'views/view_project_task.xml',
