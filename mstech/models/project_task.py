@@ -29,5 +29,5 @@ class FormulariosColumnaConectada(models.Model):
     employee_signature = fields.Binary(string="Firma de empleado")
     state_payment_invoice = fields.Selection(related='sale_order_id.invoice_ids.payment_state',string="Estado de Pago Factura" ,readonly=True)
     
-    herramientas_project = fields.Many2many('stock.picking', relation='project_task_herramientas_rel', column1='name', column2='location_id', string='Transferencia Interna Materiales')
+    herramientas_project = fields.Many2many('stock.picking', relation='project_task_herramientas_rel', column1='name', column2='location_id', string='Transferencia Interna de Materiales')
     #related_ids = fields.Many2many('mymodule.mainmodel', relation='mymodule_mainmodel_rel', column1='left', column2='right', string='Related instances')
