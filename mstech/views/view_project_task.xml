@@ -98,7 +98,7 @@
 				</xpath>
 				<xpath expr="//notebook" position="inside">
 					<page name="herramientas_transfe" string="Herramientas">
-						<field name="herramientas_project" widget="many2many" domain="['|',('picking_type_code','=','internal'),('state','=','draft')]"/>
+						<field name="herramientas_project" widget="many2many" domain="[('picking_type_code','=','internal'),('state','=','draft')]"/>
 					</page>
 				</xpath>
 			</data>
