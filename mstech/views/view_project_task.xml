@@ -56,7 +56,7 @@
 										<th name="th_position" class="text-center">Cargo</th>
 									</tr>
 								</thead>
-								<tbody class="personal_tbody">
+								<tbody class="personal_tbody row">
 									<!--<t t-set="loop1" t-value="1"/>-->
 									<t t-foreach="timesheet_ids" t-as="loop1">
 										<td name="td_number_pe" class="text-center"><t-field name="loop1.id" readonly="1"/></td>
