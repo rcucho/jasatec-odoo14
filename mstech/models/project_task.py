@@ -17,7 +17,7 @@ class FormulariosColumnaConectada(models.Model):
     create_number_vat = fields.Char(related='create_uid.vat', readonly=True)
     create_type_vat = fields.Char(related='create_uid.l10n_latam_identification_type_id.name', readonly=True)
     
-    timesheets_employee = fields.One2many(related="timesheet_ids.employee_id")
+    timesheets_employee = fields.Many2many(related="timesheet_ids.employee_id")
     timesheets_employee_id = fields.Integer(related='timesheet_ids.employee_id.id', readonly=True)
     timesheets_employee_name = fields.Char(related='timesheet_ids.employee_id.name', readonly=True)
     timesheets_employee_number_ident = fields.Char(related='timesheet_ids.employee_id.identification_id', readonly=True)
