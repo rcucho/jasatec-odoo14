@@ -58,10 +58,14 @@
 								</thead>
 								<tbody class="personal_tbody">
 									<t t-foreach="timesheet_ids" t-as="timesheet">
-										<td name="td_number_pe" class="text-center"><span t-field="timesheet.id"/></td>
+										<!--<td name="td_number_pe" class="text-center"><span t-field="timesheet.id"/></td>
 										<td name="td_names_pe" class="text-center"><field name="timesheets_employee_name"/></td>
 										<td name="td_dni_pe" class="text-center"><field name="timesheets_employee_number_ident"/></td>
-										<td name="td_position_pe" class="text-center"><field name="timesheets_employee_function"/></td>
+										<td name="td_position_pe" class="text-center"><field name="timesheets_employee_function"/></td>-->
+										<td name="td_number_pe" class="text-center"><span t-field="timesheet.employee_id"/></td>
+										<td name="td_number2_pe" class="text-center"><span t-field="timesheet.employee_id"/></td>
+										<td name="td_number3_pe" class="text-center"><span t-field="timesheet.employee_id"/></td>
+										<td name="td_number4_pe" class="text-center"><span t-field="timesheet.employee_id"/></td>
 									</t>
 								</tbody>
 							</table>
