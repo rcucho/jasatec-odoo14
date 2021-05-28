@@ -57,10 +57,12 @@
 									</tr>
 								</thead>
 								<tbody class="personal_tbody">
-									<td name="td_number_pe" class="text-center">1</td>
-									<td name="td_names_pe" class="text-center"><field name="timesheets_employee_name"/></td>
-									<td name="td_dni_pe" class="text-center"><field name="timesheets_employee_number_ident"/></td>
-									<td name="td_position_pe" class="text-center"><field name="timesheets_employee_function"/></td>
+									<t t-foreach="timesheet_ids" t-as="timesheet"/>
+										<td name="td_number_pe" class="text-center"><span t-field="timesheet.id"></td>
+										<td name="td_names_pe" class="text-center"><field name="timesheets_employee_name"/></td>
+										<td name="td_dni_pe" class="text-center"><field name="timesheets_employee_number_ident"/></td>
+										<td name="td_position_pe" class="text-center"><field name="timesheets_employee_function"/></td>
+									</t>
 								</tbody>
 							</table>
 						</div>
