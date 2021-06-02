@@ -10,6 +10,7 @@
         'sale_project',
         'industry_fsm_sale',
         'sale',
+        'product',
     ],
     'data': [
         'views/view_project_task.xml',
