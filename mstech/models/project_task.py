@@ -37,10 +37,10 @@ class FormulariosColumnaConectada(models.Model):
     #related_ids = fields.Many2many('mymodule.mainmodel', relation='mymodule_mainmodel_rel', column1='left', column2='right', string='Related instances')
 
     
- class PointofSale(models.Model):
+class PointofSale(models.Model):
     _inherit = 'product.template'
     
-   @api.onchange('type')
+    @api.onchange('type')
     def _onchange_pos_ok(self):
         if self.type == 'consu':
             self.available_in_pos = True
