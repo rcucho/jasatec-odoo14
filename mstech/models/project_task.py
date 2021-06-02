@@ -42,5 +42,7 @@ class PointofSale(models.Model):
     
     @api.onchange('type')
     def _onchange_pos_ok(self):
-        if self.type == 'consu':
-            self.available_in_pos = True
+        if self.type == 'product':
+            self.available_in_pos = 1
+        else:
+            self.available_in_pos = 0
