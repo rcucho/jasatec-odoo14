@@ -35,3 +35,12 @@ class FormulariosColumnaConectada(models.Model):
     
     herramientas_project = fields.Many2many('stock.picking', relation='project_task_herramientas_rel', column1='name', column2='location_id', string='Transferencia Interna de Materiales')
     #related_ids = fields.Many2many('mymodule.mainmodel', relation='mymodule_mainmodel_rel', column1='left', column2='right', string='Related instances')
+
+    
+ class PointofSale(models.Model):
+    _inherit = 'product.template'
+    
+   @api.onchange('type')
+    def _onchange_pos_ok(self):
+        if self.type == 'consu':
+            self.available_in_pos = True
