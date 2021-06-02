@@ -38,7 +38,7 @@ class FormulariosColumnaConectada(models.Model):
 
     
 class PointofSale(models.Model):
-    _inherit = 'product.template'
+    _inherit = 'product.product'
     
     @api.onchange('type')
     def _onchange_pos_ok(self):
