@@ -79,6 +79,7 @@
 						</div>
 						<div class="row col">
 							<span><br/><b><u>4. REGISTRO FOTOGRAFICO</u></b><br/></span>
+							<field name="foto_ids" widget="many2many_binary_image" string="Adjuntar" nolabel="1"/>
 						</div>
 						<div class="row col">
 							<span><br/><b><u>5. CONCLUSIONES Y RECOMENDACIONES</u></b><br/></span>
