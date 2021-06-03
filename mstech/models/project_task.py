@@ -35,7 +35,7 @@ class FormulariosColumnaConectada(models.Model):
     
     herramientas_project = fields.Many2many('stock.picking', relation='project_task_herramientas_rel', column1='name', column2='location_id', string='Transferencia Interna de Materiales')
     #related_ids = fields.Many2many('mymodule.mainmodel', relation='mymodule_mainmodel_rel', column1='left', column2='right', string='Related instances')
-
+    foto_ids = fields.Many2many(comodel_name='ir.attachment', relation='project_task_fotos_ids', column1='task_id', column2='attachment_id', string='Fotos')
     
 class PointofSale(models.Model):
     _inherit = 'product.product'
