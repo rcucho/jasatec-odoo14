@@ -42,12 +42,11 @@ class FormulariosColumnaConectada(models.Model):
     foto_ids = fields.Many2many(comodel_name='ir.attachment', relation='project_task_fotos_ids', column1='task_id', column2='attachment_id', string='Fotos')
     #sale_line_product = fields.Many2one
     
-    '''@onchange('planned_date_begin')
-    def _onchange_mes_task(self):
-        var = 0
-        var = datetime.strptimr()'''
-    
-    
+    #@onchange('planned_date_begin')
+    #def _onchange_mes_task(self):
+    #    var = 0
+    #    var = datetime.strptimr()
+        
 class PointofSale(models.Model):
     _inherit = 'product.product'
     
