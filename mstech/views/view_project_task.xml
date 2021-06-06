@@ -12,11 +12,11 @@
 				</xpath>
 				<xpath expr="//notebook" position="inside">
 					<page name="herramientas_transfe" string="Herramientas">
-						<div class="col">
+						<!--<div class="col">
 							<label for="herramientas_project"/>
 							<field name="herramientas_project" widget="many2many" domain="[('picking_type_code','=','internal'),('state','=','draft'),('company_id','=','partner_id.company_id')]"/>
 								<tree create="1" sample="0"/>
-						</div>
+						</div>-->
 						<field name="move_interno"/>
 					</page>
 				</xpath>
