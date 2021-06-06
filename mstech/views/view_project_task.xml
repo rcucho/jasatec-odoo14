@@ -15,6 +15,7 @@
 						<div class="col">
 							<label for="herramientas_project"/>
 							<field name="herramientas_project" widget="many2many" domain="[('picking_type_code','=','internal'),('state','=','draft'),('company_id','=','partner_id.company_id')]"/>
+							<tree create="1" sample="0"/>
 						</div>
 					</page>
 				</xpath>
