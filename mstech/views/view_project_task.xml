@@ -14,7 +14,7 @@
 					<page name="herramientas_transfe" string="Herramientas">
 						<div class="col">
 							<label for="herramientas_project"/>
-							<field name="herramientas_project" widget="many2many" domain="[('picking_type_code','=','internal'),('state','=','draft')]"/>
+							<field name="herramientas_project" widget="many2many" domain="[('picking_type_code','=','internal'),('state','=','draft'),('company_id','=','partner_id.company_id')]"/>
 						</div>
 					</page>
 				</xpath>
