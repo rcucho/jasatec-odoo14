@@ -11,6 +11,7 @@
         'industry_fsm_sale',
         'sale',
         'product',
+        'stock',
     ],
     'data': [
         'views/view_project_task.xml',
