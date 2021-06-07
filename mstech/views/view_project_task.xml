@@ -18,7 +18,7 @@
 								<tree create="1" sample="0"/> -->
 							<field name="move_interno"/>
 						</div>
-						<field name="move_int_he"/>						
+						<field name="move_interno2"/>						
 					</page>
 				</xpath>
 				<xpath expr="//notebook" position="inside">
