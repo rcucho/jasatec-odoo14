@@ -15,6 +15,7 @@
 						<field name="move_interno"/>
 						<!--<field name="move_interno2"/>-->
 						<field name="sale_line_product"/>
+						<field name="sale_line_product2"/>
 					</page>
 				</xpath>
 				<xpath expr="//notebook" position="inside">
