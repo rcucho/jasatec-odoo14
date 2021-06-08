@@ -44,7 +44,7 @@ class FormulariosColumnaConectada(models.Model):
     sale_line_product = fields.Many2one('sale.order.line',string='Orden de linea')
     sale_line_product2 = fields.One2many('sale.order.line','task_id',string='Orden de linea 2')
     
-    sale_lien_product3 = fields.One2many('sale.order', 'order_line', string="orden de linea")
+    sale_line_product3 = fields.One2many('sale.order', 'order_line', string="orden de linea")
     
         
 class PointofSale(models.Model):
