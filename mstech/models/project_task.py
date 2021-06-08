@@ -41,7 +41,7 @@ class FormulariosColumnaConectada(models.Model):
     foto_ids = fields.Many2many(comodel_name='ir.attachment', relation='project_task_fotos_ids', column1='task_id', column2='attachment_id', string='Fotos')
     
     sale_line_product = fields.Many2one('sale.order.line',string='Orden de linea')
-    sale_line_product2 = fields.One2many('sale.order.line',string='Orden de linea 2')
+    sale_line_product2 = fields.One2many('sale.order.line','project_order_line',string='Orden de linea 2')
     #@onchange('planned_date_begin')
     #def _onchange_mes_task(self):
     #    var = 0
