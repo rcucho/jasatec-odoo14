@@ -93,7 +93,7 @@
 					  		<group name="firma1">
 						    		<div class="row-col text-center">
 							    		<field name="employee_signature" widget="signature"/>
-							    		<span><br/><b><field name="timesheets_employee_name"/></b><br/></span>
+							    		<span><br/><b><field name="timesheets_employee_name"/> - JASATEC</b><br/></span>
 							    		<span><field name="timesheets_employee_function"/><br/></span>
 						    		</div>
 						  	</group>
