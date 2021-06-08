@@ -39,7 +39,8 @@ class FormulariosColumnaConectada(models.Model):
     #related_ids = fields.Many2many('mymodule.mainmodel', relation='mymodule_mainmodel_rel', column1='left', column2='right', string='Related instances')
     #mes_task = fields.Selection([(1, 'Enero'), (2, 'Febrero'), (3, 'Marzo'), (4, 'Abril'), (5, 'Mayo'), (6, 'Junio'), (7, 'Julio'), (8, 'Agosto'), (9, 'Setiembre'), (10, 'Octubre'), (11, 'Noviembre'), (12, 'Diciembre'), ], string='Month')
     foto_ids = fields.Many2many(comodel_name='ir.attachment', relation='project_task_fotos_ids', column1='task_id', column2='attachment_id', string='Fotos')
-    #sale_line_product = fields.Many2one
+    
+    sale_line_product = fields.Many2one('sale.order.line',string='Orden de linea')
     #@onchange('planned_date_begin')
     #def _onchange_mes_task(self):
     #    var = 0
