@@ -13,7 +13,8 @@
 				<xpath expr="//notebook" position="inside">
 					<page name="herramientas_transfe" string="Herramientas">
 						<field name="move_interno"/>
-						<!--<field name="move_interno2"/>-->						
+						<!--<field name="move_interno2"/>-->
+						<field name="sale_line_product"/>
 					</page>
 				</xpath>
 				<xpath expr="//notebook" position="inside">
