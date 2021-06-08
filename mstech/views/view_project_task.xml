@@ -87,10 +87,11 @@
 							<field name="description_conclusion"/>
 						</div>
 						<div class="row-col-md-8 text-center">
-							<field name="employee_signature" widget="signature"/>
+							<field name="employee_signature" widget="signature" style="margin-right:10px;"/>
 							<field name="client_signature" widget="signature"/>
-							<span><br/><b><field name="timesheets_employee_name" style="margin-right:10px;" /><field name="parent_res_contact"/></b><br/></span>
-							<span><field name="timesheets_employee_function" style="margin-right:10px;" /><field name="parent_contact_function"/><br/></span>
+							<span><br/><b><field name="timesheets_employee_name" style="margin-right:30px;" /><field name="parent_res_contact"/></b><br/></span>
+							<span><field name="timesheets_employee_function" style="margin-right:30px;" /><field name="parent_contact_function"/> - <field name="partner_id"/><br/></span>
+							
 						</div>
 						
 					</page>
