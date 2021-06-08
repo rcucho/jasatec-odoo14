@@ -31,6 +31,7 @@ class FormulariosColumnaConectada(models.Model):
     description_conclusion = fields.Text(string="Conclusiones y Recomendaciones")
     
     employee_signature = fields.Binary(string="Firma de empleado")
+    client_signature = fields.Binary(string="Firma del cliente")
     state_payment_invoice = fields.Selection(related='sale_order_id.invoice_ids.payment_state',string="Estado de Pago Factura" ,readonly=True)
     
     #herramientas_project = fields.Many2many('stock.picking.type', relation='project_task_herramientas_rel', column1='name', column2='location_id', string='Transferencia Interna de Materiales')
@@ -42,10 +43,8 @@ class FormulariosColumnaConectada(models.Model):
     
     sale_line_product = fields.Many2one('sale.order.line',string='Orden de linea')
     sale_line_product2 = fields.One2many('sale.order.line','task_id',string='Orden de linea 2')
-    #@onchange('planned_date_begin')
-    #def _onchange_mes_task(self):
-    #    var = 0
-    #    var = datetime.strptimr()
+    
+    
         
 class PointofSale(models.Model):
     _inherit = 'product.product'
