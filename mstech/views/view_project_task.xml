@@ -108,7 +108,7 @@
 						    		<div class="row-col text-center">
 							    		<field name="client_signature" widget="signature"/>
 							    		<span><br/><b><field name="parent_res_contact"/></b><br/></span>
-							    		<span><field name="parent_contact_function"/> - <field name="partner_id"/><br/></span>
+							    		<span><field name="parent_contact_function"/> - <field name="partner_id" readonly="1"/><br/></span>
 						    		</div>
 						  	</group>
 						</group>
