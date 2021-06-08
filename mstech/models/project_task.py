@@ -56,3 +56,7 @@ class PointofSale(models.Model):
             self.available_in_pos = 1
         else:
             self.available_in_pos = 0
+
+class SaleProject(models.Model):
+    _inherit = "sale.order.line"
+    project_order_line = fields.Many2one('project.task', string='Orden de Linea para Tareas')
