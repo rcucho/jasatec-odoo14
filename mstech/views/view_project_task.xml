@@ -7,6 +7,9 @@
 		<field name="inherit_id" ref="project.view_task_form2"/>
 		<field name="arch" type="xml">
 			<data>
+				<xpath expr="//page[@name='description_page']" position="attributes">
+    					<attribute name="string">Desarrollo</attribute>
+				</xpath>
 				<xpath expr="//field[@name='sale_line_id']" position="after">
 					<field name='state_payment_invoice' widget="badge" decoration-success="state_payment_invoice == 'paid'" decoration-info="state_payment_invoice == 'partial' or state_payment_invoice == 'in_payment'"/>
 				</xpath>
@@ -86,14 +89,29 @@
 							<span><br/><b><u>5. CONCLUSIONES Y RECOMENDACIONES</u></b><br/></span>
 							<field name="description_conclusion"/>
 						</div>
-						<div class="row-col-md-8 text-center">
+						<!--<div class="row-col-md-8 text-center">
 							<field name="employee_signature" widget="signature" style="margin-right:10px;"/>
 							<field name="client_signature" widget="signature"/>
 							<span><br/><b><field name="timesheets_employee_name" style="margin-right:30px;" /><field name="parent_res_contact"/></b><br/></span>
 							<span><field name="timesheets_employee_function" style="margin-right:30px;" /><field name="parent_contact_function"/> - <field name="partner_id"/><br/></span>
 							
-						</div>
-						
+						</div>-->
+						<group col="2">
+					  		<group name="firma1">
+						    		<div class="row-col text-center">
+							    		<field name="employee_signature" widget="signature"/>
+							    		<span><br/><b><field name="timesheets_employee_name"/></b><br/></span>
+							    		<span><field name="timesheets_employee_function"/><br/></span>
+						    		</div>
+						  	</group>
+						  	<group name="firma2">
+						    		<div class="row-col text-center">
+							    		<field name="client_signature" widget="signature"/>
+							    		<span><br/><b><field name="parent_res_contact"/></b><br/></span>
+							    		<span><field name="parent_contact_function"/> - <field name="partner_id"/><br/></span>
+						    		</div>
+						  	</group>
+						</group>
 					</page>
 				</xpath>
 				
