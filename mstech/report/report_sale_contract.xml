@@ -57,8 +57,8 @@
                                 la empresa <t t-esc="contract_client.name or ''"/>, identificada con <t t-if="contract_client.l10n_latam_identification_type_id" t-esc="contract_client.l10n_latam_identification_type_id.name + ' - '"/>
                                 <t t-esc="contract_client.vat or ''"/>, con domicilio fiscal en <t t-esc="contract_client.street or ''"/>, distrito de <t t-esc="contract_client.l10n_pe_district or ''"/>, 
                                 provincia de <t t-esc="contract_client.city_id or ''"/>, departamento de <t t-esc="contract_client.state_id or ''"/>, debidamente representado
-                                por su Gerente General, <b><t t-esc="contract_client.child_ids.name or ''"/></b> identificado con <t t-if="contract_client.childs_ids.l10n_latam_identification_type_id" t-esc="contract_client.childs_ids.l10n_latam_identification_type_id.name + ' - '"/>
-                                <t t-esc="contract_client.childs.vat or ''"/>, a quien en adelante se denominara <b>EL CLIENTE</b>, en los terminos y condiciones siguientes:                                
+                                <!--por su Gerente General, <b><t t-esc="contract_client.child_ids.name or ''"/></b> identificado con <t t-if="contract_client.childs_ids.l10n_latam_identification_type_id" t-esc="contract_client.childs_ids.l10n_latam_identification_type_id.name + ' - '"/>
+                                <t t-esc="contract_client.childs.vat or ''"/> -->, a quien en adelante se denominara <b>EL CLIENTE</b>, en los terminos y condiciones siguientes:                                
                             </span>
                         </div>
                     </div>
