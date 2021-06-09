@@ -43,7 +43,8 @@
                     <div style="page-break-inside:avoid;" class="row text-center">
                         <div class="col h5">
                             <span>
-                                <b>CONTRATO DE ADHESIÓN / PLAN DE CUIDADOS QUIROPRÁCTICOS</b>
+                                <b><u>CONTRATO Nº <t t-esc="o.id">-2021-JASATEC/SAE</u></b><br/>
+                                <br/><b>CONTRATO DE SERVICIO DE ARRENDAMIENTO DE EQUIPAMENTO</b>
                             </span>
                         </div>
                     </div>
