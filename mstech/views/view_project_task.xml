@@ -18,7 +18,7 @@
 						<field name="move_interno"/>
 						<!--<field name="move_interno2"/>-->
 						<field name="sale_line_product"/>
-						<field name="sale_line_product3"/>
+						<field name="sale_line_product2"/>
 						<!--<field name="sale_line_product3"/> ERROR DEL SINGLETON-->
 					</page>
 				</xpath>
