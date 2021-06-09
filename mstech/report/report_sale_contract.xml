@@ -74,14 +74,8 @@
                                 <span t-field="contract_client.vat"/>
                             </span>
                         </div>
-                        <div class="col-6">
-                            <span><b>Fecha de Nacimiento:</b> <span t-field="contract_patient.date_of_birth"/></span>
-                        </div>
                     </div>
                     <div style="page-break-inside:avoid;" class="row">
-                        <div class="col-6">
-                            <span><b>Estado Civil:</b> <span t-field="contract_patient.marital_status"/></span>
-                        </div>
                         <div class="col-6">
                             <span><b>Ocupación:</b> <span t-field="contract_client.function"/></span>
                         </div>
