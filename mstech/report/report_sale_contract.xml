@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_sale_contract_document">
+            <t t-call="web.external_layout">
+                <t t-set="o" t-value="o.with_context(lang=lang)"/>
+                <t t-set="doc" t-value="o"/>
+                <t t-if="not company">
+                    <!-- Multicompany -->
+                    <t t-if="company_id">
+                        <t t-set="company" t-value="company_id"/>
+                    </t>
+                    <t t-elif="o and 'company_id' in o">
+                        <t t-set="company" t-value="o.company_id.sudo()"/>
+                    </t>
+                    <t t-else="else">
+                        <t t-set="company" t-value="res_company"/>
+                    </t>
+                </t>
+                <div class="page" style="text-align:justify; text-justify:inter-word; margin-right:5%; margin-left:10%;" t-if="o.id">
+                    <style>
+[class*="col"] > ol {
+  padding-left: 13px;
+}
+
+[class*="col"] > ol li {
+  position: relative;
+}
+
+[class*="col"] > ol li::before {
+  content: attr(data-prefix) '.';
+  position: absolute;
+  left:-13px;
+}
+
+.especial-indent {
+  padding-left:30px;
+  text-indent:-30px;
+}
+                    </style>
+                    <t t-set="contract_client" t-value="o.partner_id"/>
+                    <div class="oe_structure"/>
+                    <div style="page-break-inside:avoid;" class="row text-center">
+                        <div class="col h5">
+                            <span>
+                                <b>CONTRATO DE ADHESIÓN / PLAN DE CUIDADOS QUIROPRÁCTICOS</b>
+                            </span>
+                        </div>
+                    </div>
+                    <div style="page-break-inside:avoid;" class="row">
+                        <div class="col">
+                            <span>EL CLIENTE abajo suscrito se adhiere, en este acto, a los servicios dispuestos por COLUMNA CONECTADA S.A.C., de acuerdo con las cláusulas y condiciones siguientes:</span>
+                        </div>
+                    </div>
+                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
+                        <div class="col">
+                            <b>
+                                <ol start="1" style="list-style-position:inside;">
+                                    <li><u>CLIENTE</u></li>
+                                </ol>
+                            </b>
+                        </div>
+                    </div>
+                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
+                        <div class="col">
+                            <span><b>Nombres y Apellidos:</b> <t t-esc="contract_client.registration_name or contract_client.name or ''"/></span>
+                        </div>
+                    </div>
+                    <div style="page-break-inside:avoid;" class="row">
+                        <div class="col-6">
+                            <span>
+                                <b>Doc. Identidad:</b>
+                                <t t-if="contract_client.l10n_latam_identification_type_id" t-esc="contract_client.l10n_latam_identification_type_id.name + ' - '"/>
+                                <span t-field="contract_client.vat"/>
+                            </span>
+                        </div>
+                        <div class="col-6">
+                            <span><b>Fecha de Nacimiento:</b> <span t-field="contract_patient.date_of_birth"/></span>
+                        </div>
+                    </div>
+                    <div style="page-break-inside:avoid;" class="row">
+                        <div class="col-6">
+                            <span><b>Estado Civil:</b> <span t-field="contract_patient.marital_status"/></span>
+                        </div>
+                        <div class="col-6">
+                            <span><b>Ocupación:</b> <span t-field="contract_client.function"/></span>
+                        </div>
+                    </div>
+                    <div style="page-break-inside:avoid;" class="row">
+                        <div class="col-6">
+                            <span><b>Correo:</b> <span t-field="contract_client.email"/></span>
+                        </div>
+                        <div class="col-6">
+                            <span><b>Distrito:</b> <span t-field="contract_client.l10n_pe_district"/></span>
+                        </div>
+                    </div>
+                    <div style="page-break-inside:avoid;" class="row">
+                        <div class="col-6">
+                            <span><b>Teléfono:</b> <span t-field="contract_client.phone"/></span>
+                        </div>
+                        <div class="col-6">
+                            <span><b>Celular:</b> <span t-field="contract_client.mobile"/></span>
+                        </div>
+                    </div>
+                    <div style="page-break-inside:avoid;" class="row">
+                        <div class="col">
+                            <span><b>Dirección:</b> <t t-esc="contract_patient.direccion and ', '.join(contract_patient.direccion.split('\n'))"/></span>
+                        </div>
+                    </div>
+                    <div style="margin-top:15px; page-break-inside:avoid;" class="row">
+                        <div class="col">
+                            <b>
+                                <ol start="2" style="list-style-position:inside;">
+                                    <li><u>CONTRATADA</u></li>
+                                </ol>
+                            </b>
+                        </div>
+                    </div>
+
+                    <div class="oe_structure"/>
+                </div>
+            </t>
+        </template>
+        
+        <template id="report_sale_contract">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="lang" t-value="user.sudo().lang"/>
+                    <t t-call="mstech.report_sale_contract_document" t-lang="lang"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
