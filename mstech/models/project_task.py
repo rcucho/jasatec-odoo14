@@ -37,15 +37,15 @@ class FormulariosColumnaConectada(models.Model):
     #herramientas_project = fields.Many2many('stock.picking.type', relation='project_task_herramientas_rel', column1='name', column2='location_id', string='Transferencia Interna de Materiales')
     move_interno = fields.Many2one('stock.picking', string = "Movimiento interno", domain="[('partner_id', '=', 'company_id.partner_id')]")
     
-    #related_ids = fields.Many2many('mymodule.mainmodel', relation='mymodule_mainmodel_rel', column1='left', column2='right', string='Related instances')
     #mes_task = fields.Selection([(1, 'Enero'), (2, 'Febrero'), (3, 'Marzo'), (4, 'Abril'), (5, 'Mayo'), (6, 'Junio'), (7, 'Julio'), (8, 'Agosto'), (9, 'Setiembre'), (10, 'Octubre'), (11, 'Noviembre'), (12, 'Diciembre'), ], string='Month')
     foto_ids = fields.Many2many(comodel_name='ir.attachment', relation='project_task_fotos_ids', column1='task_id', column2='attachment_id', string='Fotos')
     
     sale_line_product = fields.Many2one('sale.order.line',string='Orden de linea')
     sale_line_product2 = fields.One2many('sale.order.line','task_id',string='Orden de linea 2')
     
-    sale_line_product3 = fields.One2many('sale.order', 'order_line', string="orden de linea")
-    
+    #sale_line_product3 = fields.One2many('sale.order', 'order_line', string="orden de linea")    
+    sale_line_product3 = fields.One2many('sale.order','project_order_line',string='Orden de linea 3')
+
         
 class PointofSale(models.Model):
     _inherit = 'product.product'
@@ -58,7 +58,8 @@ class PointofSale(models.Model):
             self.available_in_pos = 0
 
 class SaleProject(models.Model):
-    _inherit = "sale.order.line"
+    #_inherit = "sale.order.line"
+    _inherit = "sale.order"
     project_order_line = fields.Many2one('project.task', string='Orden de Linea para Tareas', compute="_compute_project_order")
     
     def _compute_project_order(self):
