@@ -98,7 +98,7 @@
                     </div>
                     <div style="page-break-inside:avoid;" class="row">
                         <div class="col">
-                            <span><b>Dirección:</b> <t t-esc="contract_client.street and"/></span>
+                            <span><b>Dirección:</b> <t t-esc="contract_client.street"/></span>
                         </div>
                     </div>
                     <div style="margin-top:15px; page-break-inside:avoid;" class="row">
