@@ -63,7 +63,7 @@
                     </div>
                     <div style="margin-top:15px; page-break-inside:avoid;" class="row">
                         <div class="col">
-                            <span><b>Nombres y Apellidos:</b> <t t-esc="contract_client.registration_name or contract_client.name or ''"/></span>
+                            <span><b>Nombres y Apellidos:</b> <t t-esc="contract_client.name or ''"/></span>
                         </div>
                     </div>
                     <div style="page-break-inside:avoid;" class="row">
