@@ -59,8 +59,8 @@ class PointofSale(models.Model):
 
 class SaleProject(models.Model):
     _inherit = "sale.order.line"
-    project_order_line = fields.Many2one('project.task', string='Orden de Linea para Tareas')
+    project_order_line = fields.Many2one('project.task', string='Orden de Linea para Tareas', compute="_compute_project_order")
     
-    #@api.depends()
-    #def _compute_project_order(self):
-    #    order_line[]    
+    def _compute_project_order(self):
+        for record in self:
+            project_order_line = self.order_line
