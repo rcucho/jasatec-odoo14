@@ -50,7 +50,16 @@
                     </div>
                     <div style="page-break-inside:avoid;" class="row">
                         <div class="col">
-                            <span>EL CLIENTE abajo suscrito se adhiere, en este acto, a los servicios dispuestos por COLUMNA CONECTADA S.A.C., de acuerdo con las cláusulas y condiciones siguientes:</span>
+                            <span> Conste par el presente documento, el Contrato de Servicio de Arrendamiento de Equipamiento, que celebran de una parte la empresa
+                                <b>JASATEC PERU S.A.C.</b>, identificada con <b>RUC Nº 20547437773</b>, con domicilio fiscal en Calle Los Lirios Mz. I Lt- 2, Coop. 
+                                El Palerno, distrito de Puerte Piedra, provincia de Lima, departamento de Lima, debidamente representada por su Gerente General,
+                                JOSE JIM SOLANO GUEVARA, identificado con DNI Nº 10776859, quíen en adelante se le denominará <b>EL PROVEEDOR</b>; y por la otra parte
+                                la empresa <t t-esc="contract_client.name or ''"/>, identificada con <t t-if="contract_client.l10n_latam_identification_type_id" t-esc="contract_client.l10n_latam_identification_type_id.name + ' - '"/>
+                                <t t-esc="contract_client.vat or ''"/>, con domicilio fiscal en <t t-esc="contract_client.street or ''"/>, distrito de <t t-esc="contract_client.l10n_pe_district or ''"/>, 
+                                provincia de <t t-esc="contract_client.city_id or ''"/>, departamento de <t t-esc="contract_client.state_id or ''"/>, debidamente representado
+                                por su Gerente General, <b><t t-esc="contract_client.child_ids.name or ''"/></b> identificado con <t t-if="contract_client.childs_ids.l10n_latam_identification_type_id" t-esc="contract_client.childs_ids.l10n_latam_identification_type_id.name + ' - '"/>
+                                <t t-esc="contract_client.childs.vat or ''"/>, a quien en adelante se denominara <b>EL CLIENTE</b>, en los terminos y condiciones siguientes:                                
+                            </span>
                         </div>
                     </div>
                     <div style="margin-top:15px; page-break-inside:avoid;" class="row">
