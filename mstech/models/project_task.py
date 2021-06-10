@@ -52,7 +52,7 @@ class FormulariosColumnaConectada(models.Model):
     def _compute_sale_line_product5(self):
         for record in self:
             tareas = record.project_id.task_ids
-            linea = record.sale_line_id.order_line
+            linea = record.sale_line_id.order_id.order_line
             algo = linea.filtered(lambda ele: ele.id not in tareas.sale_line_id.ids)
             record.sale_line_product5 = algo
         
