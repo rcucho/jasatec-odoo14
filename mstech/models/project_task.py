@@ -45,7 +45,7 @@ class FormulariosColumnaConectada(models.Model):
     
     #sale_line_product3 = fields.One2many('sale.order', 'order_line', string="orden de linea")    
     sale_line_product3 = fields.One2many('sale.order','project_order_line',string='Orden de linea 3')
-    sale_line_product4 = fields.One2many(related='sale_line_id.order_id.order_line',string='Orden de linea aaaa')
+    sale_line_product4 = fields.One2many(related='sale_line_id.order_id.order_line',string='Orden de linea aaaa', domain="[('product_id.type','!=','service')]")
     #-------------------------------------------------------------------------------
     sale_line_product5 = fields.Many2many(comodel_name='sale.order.line', relation='relation_task_product', column1='project_task_id', column2='sale_order_line_id', string ='Productos vendidos', compute='_compute_sale_line_product5')
     #-------------------------------------------------------------------------------
