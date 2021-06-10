@@ -32,12 +32,12 @@ class FormulariosColumnaConectada(models.Model):
     client_signature = fields.Binary(string="Firma del cliente")
     state_payment_invoice = fields.Selection(related='sale_order_id.invoice_ids.payment_state',string="Estado de Pago Factura" ,readonly=True)
     
-    move_interno = fields.Many2one('stock.picking', string = "Movimiento interno", domain="[('partner_id', '=', 'company_id.partner_id')]")
+    #move_interno = fields.Many2one('stock.picking', string = "Movimiento interno", domain="[('partner_id', '=', 'company_id.partner_id')]")
     
     foto_ids = fields.Many2many(comodel_name='ir.attachment', relation='project_task_fotos_ids', column1='task_id', column2='attachment_id', string='Fotos')
     
     sale_line_product = fields.Many2one('sale.order.line',string='Orden de linea')
-    sale_line_product2 = fields.One2many('sale.order.line','task_id',string='Orden de linea 2')
+    #sale_line_product2 = fields.One2many('sale.order.line','task_id',string='Orden de linea 2')
     
     #sale_line_product3 = fields.One2many('sale.order','project_order_line',string='Orden de linea 3')
     sale_line_product4 = fields.One2many(related='sale_line_id.order_id.order_line',string='Orden de linea aaaa', domain="[('product_id.type','!=','service')]")
