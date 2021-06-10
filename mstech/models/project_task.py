@@ -46,27 +46,32 @@ class FormulariosColumnaConectada(models.Model):
     #sale_line_product3 = fields.One2many('sale.order', 'order_line', string="orden de linea")    
     sale_line_product3 = fields.One2many('sale.order','project_order_line',string='Orden de linea 3')
     sale_line_product4 = fields.One2many(related='sale_line_id.order_id.order_line',string='Orden de linea aaaa')
-    
+    #-------------------------------------------------------------------------------
     sale_line_product5 = fields.Many2many(comodel_name='sale.order.line', relation='relation_task_product', column1='project_task_id', column2='sale_order_line_id', string ='Productos vendidos', compute='_compute_sale_line_product5')
-    
-    def _compute_sale_line_product2(self):
-        sale_order = self.env['sale.order'].browse(self._context.get('active_ids', []))
-        for record in self:
-            tareas = record.project_id.task_ids
-            linea = sale_order.order_line
-            #linea = record.sale_line_id.order_id.order_line
-            algo = linea.filtered(lambda ele: ele.id not in tareas.sale_line_id.ids)
-            record.sale_line_product2 = algo
-    
+    #-------------------------------------------------------------------------------
     def _compute_sale_line_product5(self):
-        sale_order = self.env['sale.order'].browse(self._context.get('active_ids', []))
+        #sale_order = self.env['sale.order'].browse(self._context.get('active_ids', []))
         for record in self:
             tareas = record.project_id.task_ids
-            linea = sale_order.order_line
-            #linea = record.sale_line_id.order_id.order_line
+            #linea = sale_order.order_line
+            linea = record.sale_line_id.order_id.order_line
             algo = linea.filtered(lambda ele: ele.id not in tareas.sale_line_id.ids)
             record.sale_line_product5 = algo
-        
+    
+    
+    
+    
+    
+    #def _compute_sale_line_product2(self):
+        #sale_order = self.env['sale.order'].browse(self._context.get('active_ids', []))
+        #for record in self:
+            #tareas = record.project_id.task_ids
+            #linea = sale_order.order_line
+            #linea = record.sale_line_id.order_id.order_line
+            #algo = linea.filtered(lambda ele: ele.id not in tareas.sale_line_id.ids)
+            #record.sale_line_product2 = algo
+    
+
 class PointofSale(models.Model):
     _inherit = 'product.product'
     
