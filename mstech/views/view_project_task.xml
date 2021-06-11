@@ -23,16 +23,16 @@
 						<div class="col-row text-center">
 							<div class="col h5">
 								<span><b>INFORME TECNICO N°<field name="id" readonly="1"/>-2021-JASATEC/AST</b></span><br/>
-								<span>Cliente: <field name="partner_id" readonly="1"/><br/></span><br/>
+								<span>Cliente: <field name="cliente_task" readonly="1"/><br/></span><br/>
 								<span><field name="partner_type_vat"/>: <field name="partner_number_vat" readonly="1"/></span>
 							</div>
 						</div>
 						<div class="row col">
 							<span><br/><b><u>1. ANTECEDENTES</u></b><br/></span>
-							<span> Por requerimiento de la empresa <field name="partner_id" readonly="1"/> con <field name="partner_type_vat" readonly="1"/> - <field name="partner_number_vat" readonly="1"/> 
+							<span> Por requerimiento de la empresa <field name="cliente_task" readonly="1"/> con <field name="partner_type_vat" readonly="1"/> - <field name="partner_number_vat" readonly="1"/> 
 								se le remitió la Cotización N° <field name="sale_line_id" readonly="1"/>, de fecha <field name="sale_order_date" readonly="1"/> respecto al 
-								<field name="nombre_titulo"/> ubicados en la ciudad de <field name="partner_city" readonly="1"/>.<br/>Luego, nos indican que aceptan nuestra cotización y que se realizará el servicio en el 
-								mes de __. De inmediato nuestra empresa realizó las coordinaciones con <field name="parent_res_contact"/>, <field name="parent_contact_function"/> de <field name="partner_id" readonly="1"/> 
+								<field name="nombre_titulo"/> ubicados en la ciudad de <field name="cliente_task" readonly="1"/>.<br/>Luego, nos indican que aceptan nuestra cotización y que se realizará el servicio en el 
+								mes de __. De inmediato nuestra empresa realizó las coordinaciones con <field name="parent_res_contact"/>, <field name="parent_contact_function"/> de <field name="cliente_task" readonly="1"/> 
 								y se programó el servicio técnico para el día <field name="fecha_inicio" readonly="1"/>.
 							</span>
 						</div>
@@ -40,7 +40,7 @@
 							<span><br/><b><u>2. DATOS DEL SERVICIO</u><br/>2.1. Fecha y Lugar:</b><br/></span>
 							<div class="especial-indent">
 								<span>El servicio de mantenimiento preventivo de <field name="nombre_titulo" readonly="1"/> se realizó los días <field name="fecha_inicio" readonly="1"/> al <field name="fecha_fin" readonly="1"/>
-									,en las instalaciones de <field name="partner_id" readonly="1"/>, ubicada en <field name="partner_street" readonly="1"/> en la ciudad de <field name="partner_city" readonly="1"/>,
+									,en las instalaciones de <field name="cliente_task" readonly="1"/>, ubicada en <field name="partner_street" readonly="1"/> en la ciudad de <field name="partner_city" readonly="1"/>,
 									provincia de __, departamento de <field name="partner_province"/>.
 								</span>
 							</div>
@@ -95,7 +95,7 @@
 						    		<div class="row-col text-center">
 							    		<field name="client_signature" widget="signature"/>
 							    		<span><br/><b><field name="parent_res_contact"/></b><br/></span>
-							    		<span><field name="parent_contact_function"/> - <field name="partner_id" readonly="1"/><br/></span>
+							    		<span><field name="parent_contact_function"/> - <field name="cliente_task" readonly="1"/><br/></span>
 						    		</div>
 						  	</group>
 						</group>
