@@ -180,8 +180,8 @@
 								<label for="partner_id" string="Receive From" style="font-weight:bold;" attrs="{'invisible': [('picking_type_code', '!=', 'incoming')]}"/>
 								<label for="partner_id" string="Contact" style="font-weight:bold;" attrs="{'invisible': [('picking_type_code', 'in', ['incoming', 'outgoing'])]}"/>
 							</div>
-							<field name="partner_id" nolabel="1" domain="[[&quot;id&quot;,&quot;=&quot;,&quot;self.partner_id.id&quot;]]"/>
-							<field name="picking_type_id" attrs="{'invisible': [('hide_picking_type', '=', True)], 'readonly': [('state', '!=', 'draft')]}" domain="[[&quot;code&quot;,&quot;=&quot;,&quot;internal&quot;]]"/>
+							<field name="partner_id" nolabel="1" domain="[('id','partner_id.id')]"/>
+							<field name="picking_type_id" attrs="{'invisible': [('hide_picking_type', '=', True)], 'readonly': [('state', '!=', 'draft')]}" domain="[('code','=','internal')]"/>
 							<field name="location_id" options="{'no_create': True}" groups="stock.group_stock_multi_locations" attrs="{'invisible': [('picking_type_code', '=', 'incoming')]}"/>
 							<field name="location_dest_id" options="{'no_create': True}" groups="stock.group_stock_multi_locations" attrs="{'invisible': [('picking_type_code', '=', 'outgoing')]}"/>
 							<field name="backorder_id" attrs="{'invisible': [('backorder_id','=',False)]}"/>
@@ -232,7 +232,7 @@
 									<field name="product_uom_category_id" invisible="1"/>
 									<field name="has_tracking" invisible="1"/>
 									<field name="display_assign_serial" invisible="1"/>
-									<field name="product_id" required="1" context="{'default_type': 'product'}" attrs="{'readonly': ['|', '&amp;', ('state', '!=', 'draft'), ('additional', '=', False), ('has_move_lines', '=', True)]}" domain="[&quot;&amp;&quot;,[&quot;type&quot;,&quot;!=&quot;,&quot;service&quot;],[&quot;categ_id.name&quot;,&quot;=&quot;,&quot;Herramientas&quot;]]"/>
+									<field name="product_id" required="1" context="{'default_type': 'product'}" attrs="{'readonly': ['|', '&amp;', ('state', '!=', 'draft'), ('additional', '=', False), ('has_move_lines', '=', True)]}" domain="[('categ_id.name','=','Herramientas')]"/>
 									<field name="description_picking" string="Description" optional="hide"/>
 									<field name="date" invisible="1"/>
 									<field name="date_deadline" optional="hide"/>
