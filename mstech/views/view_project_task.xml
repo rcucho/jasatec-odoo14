@@ -180,7 +180,7 @@
 								<label for="partner_id" string="Receive From" style="font-weight:bold;" attrs="{'invisible': [('picking_type_code', '!=', 'incoming')]}"/>
 								<label for="partner_id" string="Contact" style="font-weight:bold;" attrs="{'invisible': [('picking_type_code', 'in', ['incoming', 'outgoing'])]}"/>
 							</div>
-							<field name="partner_id" nolabel="1" domain="[('id','partner_id.id')]"/>
+							<field name="partner_id" nolabel="1" domain="[('id','=','partner_id.id')]"/>
 							<field name="picking_type_id" attrs="{'invisible': [('hide_picking_type', '=', True)], 'readonly': [('state', '!=', 'draft')]}" domain="[('code','=','internal')]"/>
 							<field name="location_id" options="{'no_create': True}" groups="stock.group_stock_multi_locations" attrs="{'invisible': [('picking_type_code', '=', 'incoming')]}"/>
 							<field name="location_dest_id" options="{'no_create': True}" groups="stock.group_stock_multi_locations" attrs="{'invisible': [('picking_type_code', '=', 'outgoing')]}"/>
