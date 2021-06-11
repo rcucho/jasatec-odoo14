@@ -67,7 +67,7 @@ class FormulariosColumnaConectada(models.Model):
     @api.onchange('planned_date_begin')
     def _onchange_fecha_inicio(self):
         for record in self:
-            if record.planned_date_begin:
+            #if record.planned_date_begin:
                 record.fecha_inicio = record.planned_date_begin.strftime("%Y-%m-%d")
         
     @api.onchange('planned_date_end')
