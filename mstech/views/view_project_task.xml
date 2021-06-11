@@ -15,14 +15,7 @@
 				</xpath>
 				<xpath expr="//notebook" position="inside">
 					<page name="herramientas_transfe" string="Herramientas">
-						<field name="mov_herramienta">
-							<tree string="lista para herramientas" multi_edit="1" sample="1">
-								<field name="priority" optional="show" widget="priority" nolabel="1"/>
-								<field name="name" decoration-bf="1"/>
-								<field name="location_id" options="{'no_create': True}" string="From" groups="stock.group_stock_multi_locations" optional="show"/>
-								<field name="location_dest_id" options="{'no_create': True}" string="To" groups="stock.group_stock_multi_locations" optional="show"/>
-							</tree>
-						</field>
+						<field name="mov_herramienta" context="{'tree_view_ref': 'stock.picking.project_task_herramientas_tree_editable_view'}"/>
 					</page>
 				</xpath>
 				<xpath expr="//notebook" position="inside">
@@ -108,9 +101,29 @@
 						</group>
 					</page>
 				</xpath>
-				
 			</data>
 		</field>
         </record>
+	<record model="ir.ui.view" id="project_task_herramientas_tree_editable_view">
+		<field name="name">stock.picking.project.task.herramientas.tree.editable.view</field>
+		<field name="model">stock.picking</field>
+		<field name="priority" eval="100"/>
+		<field name="arch" type="xml">
+			<tree editable="bottom">
+				<field name="consumption" invisible="1"/>
+				<field name="company_id" invisible="1"/>
+				<field name="is_produced" invisible="1"/>
+				<field name="is_user_working" invisible="1"/>
+				<field name="name" invisible="1"/>
+				<field name="product_uom_id" invisible="1" readonly="0"/>
+				<field name="production_state" invisible="1"/>
+				<field name="production_bom_id" invisible="1"/>
+				<field name="qty_producing" invisible="1"/>
+				<field name="time_ids" invisible="1"/>
+				<field name="working_state" invisible="1"/>
+				<!--<button name="do_unreserve" type="object" string="Unreserve"/>-->
+			</tree>
+		</field>
+	</record>
     </data>
 </odoo>
