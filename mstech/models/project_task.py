@@ -36,6 +36,7 @@ class FormulariosColumnaConectada(models.Model):
     
     sale_line_product4 = fields.One2many(related='sale_line_id.order_id.order_line',string='Orden de linea aaaa')
     #---------------------------------------------------------------------------------------------
+    cliente_task = fields.Many2one('res.partner', string="Cliente de Tarea")
     sale_line_product = fields.Many2many(comodel_name='sale.order.line', relation='relation_task_product', column1='project_task_id', column2='sale_order_line_id', string ='Productos vendidos', compute='_compute_sale_line_product')
     fecha_inicio = fields.Date(string='Fecha de inicio de tarea', compute='_onchange_fecha_inicio')
     fecha_fin = fields.Date(string="Fecha fin de Tarea", compute='_onchange_fecha_fin')
@@ -50,7 +51,13 @@ class FormulariosColumnaConectada(models.Model):
             linea = record.sale_line_id.order_id.order_line
             algo = linea.filtered(lambda ele: ele.id not in tareas.sale_line_id.ids)
             record.sale_line_product = algo
-            
+    
+    @api.onchange('partner_id')
+    def _onchange_cliente_task(self):
+        for record in self:
+            if record.cliente_task:
+                record.cliente_task = record.partner_id
+    
     @api.onchange('name')
     def _onchange_nombre_titulo(self):
         for record in self:
