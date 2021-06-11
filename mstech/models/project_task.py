@@ -54,17 +54,20 @@ class FormulariosColumnaConectada(models.Model):
     @api.onchange('name')
     def _onchange_nombre_titulo(self):
         for record in self:
-            record.nombre_titulo = record.name
+            if record.nombre_titulo:
+                record.nombre_titulo: = record.name
             
     @api.onchange('planned_date_begin')
     def _onchange_fecha_inicio(self):
         for record in self:
-            record.fecha_inicio = record.planned_date_begin.strftime("%Y-%m-%d")
+            if record.fecha_inicio:
+                record.fecha_inicio = record.planned_date_begin.strftime("%Y-%m-%d")
         
     @api.onchange('planned_date_end')
     def _onchange_fecha_fin(self):
         for record in self:
-            record.fecha_fin = record.planned_date_end.strftime("%Y-%m-%d")
+            if record.fecha_fin:
+                record.fecha_fin = record.planned_date_end.strftime("%Y-%m-%d")
     
 class PointofSale(models.Model):
     _inherit = 'product.product'
