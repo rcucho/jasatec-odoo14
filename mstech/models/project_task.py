@@ -34,10 +34,12 @@ class FormulariosColumnaConectada(models.Model):
     
     foto_ids = fields.Many2many(comodel_name='ir.attachment', relation='project_task_fotos_ids', column1='task_id', column2='attachment_id', string='Fotos')
 
+    #----------------------------------------------------------------------------------------
     sale_line_product4 = fields.One2many(related='sale_line_id.order_id.order_line',string='Orden de linea aaaa')
-    #-------------------------------------------------------------------------------
     sale_line_product5 = fields.Many2many(comodel_name='sale.order.line', relation='relation_task_product', column1='project_task_id', column2='sale_order_line_id', string ='Productos vendidos', compute='_compute_sale_line_product5')
-    #-------------------------------------------------------------------------------
+    #----------------------------------------------------------------------------------------
+    nombre_titulo = fields.Char(string="Titulo de Tarea", readonly=True, compute='_onchange_nombre_titulo')
+    #----------------------------------------------------------------------------------------
     @api.onchange('sale_line_id')
     def _compute_sale_line_product5(self):
         #sale_order = self.env['sale.order'].browse(self._context.get('active_ids', []))
@@ -47,6 +49,11 @@ class FormulariosColumnaConectada(models.Model):
             linea = record.sale_line_id.order_id.order_line
             algo = linea.filtered(lambda ele: ele.id not in tareas.sale_line_id.ids)
             record.sale_line_product5 = algo
+            
+    @api.onchange('name')
+    def _onchange_nombre_titulo(self):
+        for record in self:
+            record.nombre_titulo = record.name
     
 class PointofSale(models.Model):
     _inherit = 'product.product'
