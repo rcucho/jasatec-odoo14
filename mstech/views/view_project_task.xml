@@ -15,6 +15,7 @@
 				</xpath>
 				<xpath expr="//notebook" position="inside">
 					<page name="herramientas_transfe" string="Herramientas">
+						<field name="mov_herramienta"/>
 						<field name="sale_line_product4"/>
 					</page>
 				</xpath>
