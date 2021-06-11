@@ -33,17 +33,16 @@ class FormulariosColumnaConectada(models.Model):
     state_payment_invoice = fields.Selection(related='sale_order_id.invoice_ids.payment_state',string="Estado de Pago Factura" ,readonly=True)
     
     foto_ids = fields.Many2many(comodel_name='ir.attachment', relation='project_task_fotos_ids', column1='task_id', column2='attachment_id', string='Fotos')
-
-    #----------------------------------------------------------------------------------------
+    
     sale_line_product4 = fields.One2many(related='sale_line_id.order_id.order_line',string='Orden de linea aaaa')
-    sale_line_product5 = fields.Many2many(comodel_name='sale.order.line', relation='relation_task_product', column1='project_task_id', column2='sale_order_line_id', string ='Productos vendidos', compute='_compute_sale_line_product5')
+    #---------------------------------------------------------------------------------------------
+    sale_line_product = fields.Many2many(comodel_name='sale.order.line', relation='relation_task_product', column1='project_task_id', column2='sale_order_line_id', string ='Productos vendidos', compute='_compute_sale_line_product')
     fecha_inicio = fields.Date(string='Fecha de inicio de tarea', compute='_onchange_fecha_inicio')
     fecha_fin = fields.Date(string="Fecha fin de Tarea", compute='_onchange_fecha_fin')
-    #----------------------------------------------------------------------------------------
     nombre_titulo = fields.Char(string="Titulo de Tarea", readonly=True, compute='_onchange_nombre_titulo')
-    #----------------------------------------------------------------------------------------
+    #---------------------------------------------------------------------------------------------
     @api.onchange('sale_line_id')
-    def _compute_sale_line_product5(self):
+    def _compute_sale_line_product(self):
         #sale_order = self.env['sale.order'].browse(self._context.get('active_ids', []))
         for record in self:
             tareas = record.project_id.task_ids
