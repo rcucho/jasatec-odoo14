@@ -61,8 +61,8 @@ class FormulariosColumnaConectada(models.Model):
     @api.onchange('name')
     def _onchange_nombre_titulo(self):
         for record in self:
-            if record.nombre_titulo:
-                record.nombre_titulo = record.name
+            #if record.nombre_titulo:
+            record.nombre_titulo = record.name
             
     @api.depends('planned_date_begin')
     def _onchange_fecha_inicio(self):
