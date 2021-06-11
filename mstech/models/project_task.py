@@ -55,8 +55,8 @@ class FormulariosColumnaConectada(models.Model):
     @api.onchange('partner_id')
     def _onchange_cliente_task(self):
         for record in self:
-            if record.cliente_task:
-                record.cliente_task = record.partner_id
+            #if record.cliente_task:
+            record.cliente_task = record.partner_id
     
     @api.onchange('name')
     def _onchange_nombre_titulo(self):
