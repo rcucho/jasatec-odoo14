@@ -119,7 +119,7 @@
 				<field name="location_dest_id" options="{'no_create': True}" string="To" groups="stock.group_stock_multi_locations" optional="show"/>
 				<button name="do_unreserve" type="object" string="Unreserve"/>
 			</tree>
-			<!-- ----------------ACA------------------ -->
+
 			<form string="Transfer">
 				<field name="is_locked" invisible="1"/>
 				<field name="show_mark_as_todo" invisible="1"/>
@@ -293,7 +293,8 @@
 					</notebook>
 				</sheet>
 			</form>
-			<!-- ---------ACA------- -->
+			
+			
 		</field>
 	</record>
     </data>
