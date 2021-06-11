@@ -42,7 +42,7 @@ class FormulariosColumnaConectada(models.Model):
     fecha_fin = fields.Date(string="Fecha fin de Tarea", compute='_onchange_fecha_fin')
     nombre_titulo = fields.Char(string="Titulo de Tarea", readonly=True, compute='_onchange_nombre_titulo')
     mov_herramienta = fields.Many2many(comodel_name='stock.picking', relation='relation_task_herramienta', column1='project_task_id', column2='stock_picking_id', 
-                                       string='Herramientas', compute='_compute_mov_herramienta')
+                                       string='Herramientas')#, compute='_compute_mov_herramienta')
     #---------------------------------------------------------------------------------------------
     
     def _compute_mov_herramienta(self):
