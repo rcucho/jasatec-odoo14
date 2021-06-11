@@ -40,7 +40,7 @@
 						<div class="row col">
 							<span><br/><b><u>2. DATOS DEL SERVICIO</u><br/>2.1. Fecha y Lugar:</b><br/></span>
 							<div class="especial-indent">
-								<span>El servicio de mantenimiento preventivo de <field name="name" readonly="1"/> se realizó los días <field name="planned_date_begin" readonly="1"/> al <field name="planned_date_end" readonly="1"/>
+								<span>El servicio de mantenimiento preventivo de <field name="nombre_titulo" readonly="1"/> se realizó los días <field name="planned_date_begin" readonly="1"/> al <field name="planned_date_end" readonly="1"/>
 									,en las instalaciones de <field name="partner_id" readonly="1"/>, ubicada en <field name="partner_street" readonly="1"/> en la ciudad de <field name="partner_city" readonly="1"/>,
 									provincia de __, departamento de <field name="partner_province"/>.
 								</span>
