@@ -34,21 +34,20 @@
 								se le remitió la Cotización N° <field name="sale_line_id" readonly="1"/>, de fecha <field name="sale_order_date" readonly="1"/> respecto al 
 								<field name="name" readonly="1"/> ubicados en la ciudad de <field name="partner_city" readonly="1"/>.<br/>Luego, nos indican que aceptan nuestra cotización y que se realizará el servicio en el 
 								mes de __. De inmediato nuestra empresa realizó las coordinaciones con <field name="parent_res_contact"/>, <field name="parent_contact_function"/> de <field name="partner_id" readonly="1"/> 
-								y se programó el servicio técnico para el día <field name="planned_date_begin"/>.
+								y se programó el servicio técnico para el día <field name="planned_date_begin" readonly="1"/>.
 							</span>
 						</div>
 						<div class="row col">
 							<span><br/><b><u>2. DATOS DEL SERVICIO</u><br/>2.1. Fecha y Lugar:</b><br/></span>
 							<div class="especial-indent">
-								<span>El servicio de mantenimiento preventivo de <field name="name" readonly="1"/> se realizó los días <field name="planned_date_begin"/> al <field name="planned_date_end"/>,en las 
-									instalaciones de <field name="partner_id" readonly="1"/>, ubicada en <field name="partner_street" readonly="1"/> en la ciudad de <field name="partner_city" readonly="1"/>,
+								<span>El servicio de mantenimiento preventivo de <field name="name" readonly="1"/> se realizó los días <field name="planned_date_begin" readonly="1"/> al <field name="planned_date_end" readonly="1"/>
+									,en las instalaciones de <field name="partner_id" readonly="1"/>, ubicada en <field name="partner_street" readonly="1"/> en la ciudad de <field name="partner_city" readonly="1"/>,
 									provincia de __, departamento de <field name="partner_province"/>.
 								</span>
 							</div>
 						</div>
 						<div class="row col">
 							<span><br/><b>2.2. Personal tecnico:</b><br/>Para el presente servicio se asignó el personal técnico se detalla a continuación:<br/></span>
-							<!--<field name="timesheets_employee"/>-->
 							<field name="timesheet_ids" readonly="1"/>
 						</div>
 						<div class="row col">
@@ -82,7 +81,6 @@
 							<span><br/><b><u>4. REGISTRO FOTOGRAFICO</u></b><br/></span>
 						</div>
 						<field name="foto_ids" widget="many2many_binary" string="Adjuntar Foto" nolabel="1"/>
-						<!--<field name="foto_ids" widget="many2many_binary_image"/>-->
 						<div class="row col">
 							<span><br/><b><u>5. CONCLUSIONES Y RECOMENDACIONES</u></b><br/></span>
 							<field name="description_conclusion"/>
