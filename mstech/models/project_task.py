@@ -49,7 +49,7 @@ class FormulariosColumnaConectada(models.Model):
             #linea = sale_order.order_line
             linea = record.sale_line_id.order_id.order_line
             algo = linea.filtered(lambda ele: ele.id not in tareas.sale_line_id.ids)
-            record.sale_line_product5 = algo
+            record.sale_line_product = algo
             
     @api.onchange('name')
     def _onchange_nombre_titulo(self):
