@@ -15,7 +15,7 @@
 				</xpath>
 				<xpath expr="//notebook" position="inside">
 					<page name="herramientas_transfe" string="Herramientas">
-						<field name="mov_herramienta" domain="[('partner_id','=',partner_id),('picking_type_id.code','=','internal'),('state','=','draft')]" context="{'tree_view_ref': 'stock.picking.project_task_herramientas_tree_editable_view'}">
+						<field name="mov_herramienta" domain="[('partner_id','=',partner_id),('picking_type_id.code','=','internal'),('state','=','draft')]">
 							<tree editable="bottom">
 								<field name="name" decoration-bf="1"/>
 								<field name="picking_type_id" optional="show"/>
