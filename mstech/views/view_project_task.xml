@@ -28,7 +28,7 @@
 										<field name="location_id" string="Desde" optional="show"/>
 										<field name="location_dest_id" string="Para" optional="show"/>-->
 										<field name="state" optional="show" widget="badge" decoration-success="state == 'done'" decoration-info="state not in ('done', 'cancel')"/>
-										<button name="action_confirm" type="object" string="Marcar Hecho" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+										<!--<button name="action_confirm" type="object" string="Marcar Hecho" attrs="{'invisible': [('state', '!=', 'draft')]}"/>-->
 									</tree>
 									<form string="Transfer">
 										<field name="is_locked" invisible="1"/>
