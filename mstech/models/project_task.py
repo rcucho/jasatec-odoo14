@@ -87,12 +87,12 @@ class FormulariosColumnaConectada(models.Model):
     #@api.multi
     def do_unreserve(self):
         for record in self:
-            record.stock_picking.do_unreserve()
+            record.mov_herramienta.do_unreserve()
         return True
     
     def do_create(self):
         for record in self:
-            record.stock_picking.create()
+            record.mov_herramienta.create()
         return True
     
 class PointofSale(models.Model):
