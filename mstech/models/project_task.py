@@ -85,14 +85,14 @@ class FormulariosColumnaConectada(models.Model):
             if record.planned_date_end:
                 record.fecha_fin = record.planned_date_end.strftime("%Y-%m-%d")
                 
-    #@api.multi
+
     def do_unreserve(self):
         for record in self:
             record.mov_herramienta.do_unreserve()
         return True
     
-    @api.multi
-    def action_confirm_picking(self):
+
+    def action_confirm(self):
         for record in self:
             record.task_picking.action_confirm()
         return True
