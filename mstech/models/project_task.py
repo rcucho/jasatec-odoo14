@@ -146,8 +146,8 @@ class StockPickingTask(models.Model):
     def _compute_move_without_package(self):
         for record in self:
             if record.picking_task:
-                movimi = record.move_without_package
+                movimi = record.move_ids_without_package
                 herra = movimi.filtered(lambda x_h: x_h.movimi.product_id.categ_id.name == 'Herramientas')
-                record.move_without_package = herra        
+                record.move_ids_without_package = herra        
         mov_he = super()._compute_move_without_package()
         return mov_he   
