@@ -32,14 +32,13 @@
 						<div class="text-center">
 							<div class="col h5">
 								<label for='task_picking' string="Movimiento Interno de Herramientas" style="font-weight:bold;"/>
-								<field name="task_picking"/>
+								<field name="task_picking">
 									<tree editable="button">
 										<button name="action_confirm_picking" type="object" string="Marcar Hecho"/>
 									</tree>
 								</field>	
 							</div>
 						</div>
-						
 					</page>
 				</xpath>
 				<xpath expr="//notebook" position="inside">
