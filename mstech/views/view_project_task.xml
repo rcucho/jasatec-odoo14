@@ -27,8 +27,9 @@
 								<!--<button name="do_unreserve" type="object" string="Cancelar Reserva"/>-->
 							</tree>
 						</field>
-						<button name="do_unreserve" type="object" string="Cancelar Reserva"/>
-						<button name="do_create" type="object" string="Crear Reserva"/>
+						<!--<button name="do_unreserve" type="object" string="Cancelar Reserva"/>
+						<button name="do_create" type="object" string="Crear Reserva"/>-->
+						<field name="task_picking"/>
 					</page>
 				</xpath>
 				<xpath expr="//notebook" position="inside">
