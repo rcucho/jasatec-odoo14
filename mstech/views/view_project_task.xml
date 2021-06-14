@@ -241,7 +241,7 @@
 						<div class="row col">
 							<span><br/><b>2.2. Personal tecnico:</b><br/>Para el presente servicio se asignó el personal técnico se detalla a continuación:<br/></span>
 							<!--<field name="timesheet_ids" readonly="1"/>-->
-							<field name="timesheets_ids_ref "/>
+							<field name="timesheets_ids_ref"/>
 									 
 						</div>
 						<div class="row col">
