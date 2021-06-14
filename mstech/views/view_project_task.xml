@@ -32,12 +32,12 @@
 						<div class="text-center">
 							<div class="col h5">
 								<label for='task_picking' string="Movimiento Interno de Herramientas" style="font-weight:bold;"/>
-								<field name="task_picking">
+								<field name="task_picking" domain="[('partner_id','=',partner_id),('state','=','draft')]",('picking_type_id.code','=','internal')]>
 									<tree editable="button" create="1">
 										<field name="name" decoration-bf="1"/>
-										<!--<field name="picking_type_id" optional="show" readonly="0"/>-->
+										<field name="picking_type_id" optional="show" readonly="0"/>
 										<field name="user_id" optional="hide" widget="many2one_avatar_user"/>
-										<field name="partner_id" optional="show" readonly="0"/>
+										<field name="partner_id" optional="show"/>
 										<field name="company_id" groups="base.group_multi_company" optional="hide"/>
 										<field name="location_id" options="{'no_create': True}" string="Desde" groups="stock.group_stock_multi_locations" optional="show"/>
 										<field name="location_dest_id" options="{'no_create': True}" string="Para" groups="stock.group_stock_multi_locations" optional="show"/>
