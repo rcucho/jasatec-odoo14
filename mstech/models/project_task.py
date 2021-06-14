@@ -43,7 +43,7 @@ class FormulariosColumnaConectada(models.Model):
     nombre_titulo = fields.Char(string="Titulo de Tarea", readonly=True, compute='_onchange_nombre_titulo')
     mov_herramienta = fields.Many2many(comodel_name='stock.picking', relation='relation_task_herramienta', column1='project_task_id', column2='stock_picking_id', 
                                        string='Herramientas')#, compute='_compute_mov_herramienta')
-    task_picking = fields.One2many('stock.picking','picking_task', string="Herram.", compute = '_compute_task_picking')
+    task_picking = fields.One2many('stock.picking','picking_task', string="Herram.", compute = '_compute_task_picking', readonly=False)
     #---------------------------------------------------------------------------------------------
     
     def _compute_mov_herramienta(self):
