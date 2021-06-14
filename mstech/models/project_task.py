@@ -91,11 +91,22 @@ class FormulariosColumnaConectada(models.Model):
             record.mov_herramienta.do_unreserve()
         return True
     
-
     def action_confirm(self):
         for record in self:
             record.task_picking.action_confirm()
         return True
+    
+    def action_assign(self):
+        for record in self:
+            record.task_picking.action_assign()
+        return True
+    
+    def button_validate(self):
+        for record in self:
+            record.task_picking.button_validate()
+        return True
+        
+    
     
 class PointofSale(models.Model):
     _inherit = 'product.product'
@@ -146,4 +157,12 @@ class StockPickingTask(models.Model):
                 herra = movimi.filtered(lambda x_h: x_h.movimi.product_id.categ_id.name == 'Herramientas')
                 record.move_ids_without_package = herra        
         mov_he = super()._compute_move_without_package()
-        return mov_he   
+        return mov_he
+    
+    def validate_directo(self):
+        for record in self:
+            record.action_confirm()
+            record.action_assign()
+            #if record.action_assign() == True
+            record.button_validate()
+        return True
