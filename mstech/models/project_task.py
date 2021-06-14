@@ -96,6 +96,11 @@ class FormulariosColumnaConectada(models.Model):
             record.mov_herramienta.create()
         return True
     
+    #def _compute_task_picking(self):
+        #for record in self:
+            #record.task_picking.partner_id = record.partner_id
+            #record.task_picking.picking_type_id = (5, 'San Francisco: Internal Transfers')
+    
 class PointofSale(models.Model):
     _inherit = 'product.product'
     
@@ -113,12 +118,13 @@ class StockPickingTask(models.Model):
     
     @api.model
     def create(self, vals):
-        #defaults = self.default_get(['name', 'picking_type_id'])
-        #picking_type = self.env['stock.picking.type'].browse(vals.get('picking_type_id', defaults.get('picking_type_id')))      
+        defaults = self.default_get(['name', 'picking_type_id'])
+        picking_type = self.env['stock.picking.type'].browse(vals.get('picking_type_id', defaults.get('picking_type_id')))      
+        
         if self.picking_task:
-            res = super(StockPickingTask,self).create(vals)
-            #if vals.get('name', '/') == '/' and defaults.get('name', '/') == '/' and vals.get('picking_type_id', defaults.get('picking_type_id')):
-                #vals['name'] = picking_type.sequence_id.next_by_id()
-
+            #res = super(StockPickingTask,self).create(vals)
+            if vals.get('name', '/') == '/' and defaults.get('name', '/') == '/' and vals.get('picking_type_id', defaults.get('picking_type_id')):
+                vals['name'] = picking_type.sequence_id.next_by_id()
+        res = super(StockPickingTask,self).create(vals)      
         return res
     
