@@ -163,7 +163,7 @@ class StockPickingTask(models.Model):
         for record in self:
             record.action_confirm()
             record.action_assign()
-            #if record.action_assign() == True
-            record.button_validate()
-            record.button_validate()
+            if record.action_assign() == True
+                record.button_validate()
+                #record.button_validate()
         return True
