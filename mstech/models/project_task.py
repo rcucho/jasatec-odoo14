@@ -114,11 +114,12 @@ class StockPickingTask(models.Model):
     @api.model
     def create(self, vals):
         defaults = self.default_get(['name', 'picking_type_id'])
-        picking_type = self.env['stock.picking.type'].browse(vals.get('picking_type_id', defaults.get('picking_type_id')))
-        res = super(self).create(vals)
+        picking_type = self.env['stock.picking.type'].browse(vals.get('picking_type_id', defaults.get('picking_type_id')))      
         if picking_task:         
             if vals.get('name', '/') == '/' and defaults.get('name', '/') == '/' and vals.get('picking_type_id', defaults.get('picking_type_id')):
                 if picking_type.sequence_id:
                     vals['name'] = picking_type.sequence_id.next_by_id()
+                    
+        res = super(self).create(vals)
         return res
     
