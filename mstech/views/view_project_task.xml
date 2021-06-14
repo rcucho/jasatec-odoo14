@@ -31,7 +31,7 @@
 						<button name="do_create" type="object" string="Crear Reserva"/>-->
 						<div class="text-center">
 							<div class="col h5">
-								<label for='task_picking' string="Movimiento Interno de Herramientas" style="font-weight:bold;" >
+								<label for='task_picking' string="Movimiento Interno de Herramientas" style="font-weight:bold;"/>
 								<field name="task_picking"/>
 							</div>
 						</div>
