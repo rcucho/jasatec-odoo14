@@ -145,8 +145,9 @@ class StockPickingTask(models.Model):
     @api.depends('state', 'move_lines', 'move_lines.state', 'move_lines.package_level_id', 'move_lines.move_line_ids.package_level_id')
     def _compute_move_without_package(self):
         for record in self:
-            movimi = record.move_without_package
-            herra = movimi.filtered(lambda x_h: x_h.movimi.product_id.categ_id.name == 'Herramientas')
-            record.move_without_package = herra        
+            if record.picking_task:
+                movimi = record.move_without_package
+                herra = movimi.filtered(lambda x_h: x_h.movimi.product_id.categ_id.name == 'Herramientas')
+                record.move_without_package = herra        
         mov_he = super()._compute_move_without_package()
         return mov_he   
