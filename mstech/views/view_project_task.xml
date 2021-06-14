@@ -15,7 +15,7 @@
 				</xpath>
 				<xpath expr="//notebook" position="inside">
 					<page name="herramientas_transfe" string="Herramientas">
-						<field name="mov_herramienta" domain="[('partner_id','=',partner_id),('picking_type_id.code','=','internal'),('state','=','draft')]">
+						<field name="mov_herramienta" domain="[('partner_id','=',partner_id),('picking_type_id.code','=','internal'),('state','=','draft')]" context="{'tree_view_ref': 'stock.picking.project_task_herramientas_tree_editable_view'}">
 							<tree editable="bottom">
 								<field name="name" decoration-bf="1"/>
 								<field name="picking_type_id" optional="show"/>
@@ -99,5 +99,17 @@
 			</data>
 		</field>
         </record>
+	<record model="ir.ui.view" id="project_task_herramienta_tree_view">
+		<field name="name">stock.picking.project.task.herramienta.tree.view</field>
+		<field name="model">stock.picking</field>
+		<field name="mode">primary</field>
+		<field name="priority" eval="10"/>
+		<!--<field name="inherit_id" ref="mstech.view_project_task_technical"/>-->
+		<field name="arch" type="xml">
+			<xpath expr="//tree" position="inside">
+				<button name="do_unreserve" type="object" string="Unreserve"/>
+			</xpath>	
+		</field>
+	</record>
     </data>
 </odoo>
