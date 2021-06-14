@@ -91,15 +91,10 @@ class FormulariosColumnaConectada(models.Model):
             record.mov_herramienta.do_unreserve()
         return True
     
-    def do_create(self):
+    def action_confirm_picking():
         for record in self:
-            record.mov_herramienta.create()
+            record.task_picking.action_confirm()
         return True
-    
-    #def _compute_task_picking(self):
-        #for record in self:
-            #record.task_picking.partner_id = record.partner_id
-            #record.task_picking.picking_type_id = (5, 'San Francisco: Internal Transfers')
     
 class PointofSale(models.Model):
     _inherit = 'product.product'
