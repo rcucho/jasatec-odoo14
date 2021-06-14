@@ -91,7 +91,7 @@ class FormulariosColumnaConectada(models.Model):
             record.mov_herramienta.do_unreserve()
         return True
     
-    def action_confirm_picking():
+    def action_confirm_picking(self):
         for record in self:
             record.task_picking.action_confirm()
         return True
