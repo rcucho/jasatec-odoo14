@@ -165,4 +165,5 @@ class StockPickingTask(models.Model):
             record.action_assign()
             #if record.action_assign() == True
             record.button_validate()
+            record.button_validate()
         return True
