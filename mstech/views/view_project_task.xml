@@ -15,7 +15,7 @@
 				</xpath>
 				<xpath expr="//notebook" position="inside">
 					<page name="herramientas_transfe" string="Herramientas">
-						<field name="mov_herramienta" domain="[('partner_id','=',partner_id),('picking_type_id.code','=','internal'),('state','=','draft')]" context="{'tree_view_ref': 'stock.picking.project_task_herramientas_tree_editable_view'}">
+						<field name="mov_herramienta" domain="[('partner_id','=',partner_id),('picking_type_id.code','=','internal'),('state','=','draft')]">
 							<tree editable="bottom" create="0" sample="1" modifiers="{}">
 								<field name="name" decoration-bf="1"/>
 								<field name="picking_type_id" optional="show"/>
@@ -99,21 +99,5 @@
 			</data>
 		</field>
         </record>
-	<record model="ir.ui.view" id="project_task_herramienta_tree_view">
-		<field name="name">stock.picking.project.task.herramienta.tree.view</field>
-		<field name="model">stock.picking</field>
-		<field name="mode">primary</field>
-		<field name="priority" eval="10"/>
-		<field name="inherit_id" ref="mstech.view_project_task_technical"/>
-		<field name="arch" type="xml">
-			<tree editable="bottom">
-				<button_group name="button_group_0" modifiers="{}" editOnly="false" readOnly="false">
-					<button name="do_unreserve" type="object" string="Unreserve" class="btn-success" options="{}" editOnly="false" readOnly="false"/>
-				</button_group>
-				<field name="show_json_popover" invisible="1" modifiers="{'readonly':true,'column_invisible':true}"/>
-				<field name="json_popover" widget="mrp_workorder_popover" string=" " width="0.1" attrs="{'invisible': [('show_json_popover', '=', False)]}" modifiers="{'invisible':[['show_json_popover','=',false]],'readonly':true}"/>
-			</tree>	
-		</field>
-	</record>
     </data>
 </odoo>
