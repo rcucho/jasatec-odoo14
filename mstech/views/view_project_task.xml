@@ -208,10 +208,9 @@
 									</form>
 								</field>
 							</div>
-							<div class="row">
+							<!--<div class="row">
 								<button name="action_confirm" type="object" string="Marcar Hecho" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
-								
-							</div>
+							</div>-->
 						</div>
 					</page>
 				</xpath>
