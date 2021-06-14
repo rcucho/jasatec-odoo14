@@ -90,6 +90,11 @@ class FormulariosColumnaConectada(models.Model):
             record.stock_picking.do_unreserve()
         return True
     
+    def do_create(self):
+        for record in self:
+            record.stock_picking.create()
+        return True
+    
 class PointofSale(models.Model):
     _inherit = 'product.product'
     
