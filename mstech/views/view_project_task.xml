@@ -34,7 +34,7 @@
 								<label for='task_picking' string="Movimiento Interno de Herramientas" style="font-weight:bold;"/>
 								<field name="task_picking">
 									<tree editable="button">
-										<button name="action_confirm_picking" type="object" string="Marcar Hecho"/>
+										<button name="action_confirm" type="object" string="Marcar Hecho"/>
 									</tree>
 								</field>	
 							</div>
