@@ -104,3 +104,8 @@ class PointofSale(models.Model):
             self.available_in_pos = 1
         else:
             self.available_in_pos = 0
+            
+class StockPickingTask(models.Model):
+    _inherit = 'stock.picking'
+    
+    picking_task = Many2one('project.task', string="tarea en movimiento")
