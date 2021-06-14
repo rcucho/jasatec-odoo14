@@ -110,3 +110,15 @@ class StockPickingTask(models.Model):
     _inherit = 'stock.picking'
     
     picking_task = fields.Many2one('project.task', string="tarea en movimiento")
+    
+    @api.model
+    def create(self, vals):
+        defaults = self.default_get(['name', 'picking_type_id'])
+        picking_type = self.env['stock.picking.type'].browse(vals.get('picking_type_id', defaults.get('picking_type_id')))
+        res = super(self).create(vals)
+        if picking_task:         
+            if vals.get('name', '/') == '/' and defaults.get('name', '/') == '/' and vals.get('picking_type_id', defaults.get('picking_type_id')):
+                if picking_type.sequence_id:
+                    vals['name'] = picking_type.sequence_id.next_by_id()
+        return res
+    
