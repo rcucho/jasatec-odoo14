@@ -240,7 +240,8 @@
 						</div>
 						<div class="row col">
 							<span><br/><b>2.2. Personal tecnico:</b><br/>Para el presente servicio se asignó el personal técnico se detalla a continuación:<br/></span>
-							<field name="timesheet_ids" readonly="1"/>
+							<!--<field name="timesheet_ids" readonly="1"/>-->
+							<field name="timesheet_ids_ref"/>
 						</div>
 						<div class="row col">
 							<span><br/><b>2.3. Equipamiento:</b><br/>Los equipos a los que se realizó el servicio de mantenimiento preventivo son los que se indican a continuación:<br/></span>
