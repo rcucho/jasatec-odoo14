@@ -16,7 +16,9 @@ class FormulariosColumnaConectada(models.Model):
     create_function = fields.Char(related='create_uid.function', readonly=True)
     create_number_vat = fields.Char(related='create_uid.vat', readonly=True)
     create_type_vat = fields.Char(related='create_uid.l10n_latam_identification_type_id.name', readonly=True)
-
+    
+    timesheets_ids_ref = fields.One2many(related='account.analytic.line.task_id', string='Lista Empleados')
+    
     timesheets_employee = fields.Many2one(related="timesheet_ids.employee_id")
     timesheets_employee_id = fields.Integer(related='timesheet_ids.employee_id.id', readonly=True)
     timesheets_employee_name = fields.Char(related='timesheet_ids.employee_id.name', readonly=True)
