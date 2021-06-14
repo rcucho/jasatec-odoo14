@@ -84,7 +84,7 @@ class FormulariosColumnaConectada(models.Model):
             if record.planned_date_end:
                 record.fecha_fin = record.planned_date_end.strftime("%Y-%m-%d")
                 
-    @api.multi
+    #@api.multi
     def do_unreserve(self):
         for record in self:
             record.stock_picking.do_unreserve()
