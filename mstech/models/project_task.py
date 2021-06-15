@@ -55,7 +55,7 @@ class FormulariosColumnaConectada(models.Model):
     @api.onchange('timesheet_ids')
     def _compute_timesheets_ids_ref(self):
         for record in self:
-            if record.timesheets_ids_ref:
+            if record.timesheet_ids:
                 record.timesheets_ids_ref = record.timesheet_ids
     
     @api.onchange('sale_line_id')
