@@ -61,13 +61,14 @@ class FormulariosColumnaConectada(models.Model):
     @api.onchange('sale_line_id')
     def _compute_sale_line_product(self):
         for record in self:
-            tareas = record.project_id.task_ids
-            #linea = record.sale_line_id.order_id.order_line
-            sale_task = record.sale_line_id
-            order_task = sale_task.order_id
-            linea_task = order_task.order_line
-            product_task = linea_task.filtered(lambda ele: ele.id not in tareas.sale_line_id.ids)
-            record.sale_line_product = product_task
+            if sale_line_id:
+                tareas = record.project_id.task_ids
+                #linea = record.sale_line_id.order_id.order_line
+                sale_task = record.sale_line_id
+                order_task = sale_task.order_id
+                linea_task = order_task.order_line
+                product_task = linea_task.filtered(lambda ele: ele.id not in tareas.sale_line_id.ids)
+                record.sale_line_product = product_task
     
     @api.onchange('partner_id')
     def _onchange_cliente_task(self):
