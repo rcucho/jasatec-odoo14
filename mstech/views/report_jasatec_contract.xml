@@ -27,8 +27,8 @@
             <field name="binding_view_types">form</field>
         </record>
         
-        <record id="paperformat_arrendamiento" model="report.paperformat">
-            <field name="name">European A4 low margin</field>
+        <record id="paperformat_hoja_horizontal" model="report.paperformat">
+            <field name="name">A4 Horizontal</field>
             <field name="default" eval="True" />
             <field name="format">A4</field>
             <field name="page_height">0</field>
@@ -44,7 +44,7 @@
         </record>
         
         <record id="mstech.jasatec_estado_arrendamiento" model="ir.actions.report">
-            <field name="paperformat_id" ref="mstech.paperformat_arrendamiento" />
+            <field name="paperformat_id" ref="mstech.paperformat_hoja_horizontal" />
         </record>
     </data>
 </odoo>
