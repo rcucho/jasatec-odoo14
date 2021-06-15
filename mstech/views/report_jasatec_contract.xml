@@ -44,7 +44,7 @@
         </record>
         
         <record id="mstech.report_sale_arrendamiento" model="ir.actions.report">
-            <field name="paperformat_id" ref="sale.paperformat_lowmargin" />
+            <field name="paperformat_id" ref="mstech.paperformat_arrendamiento" />
         </record>
     </data>
 </odoo>
