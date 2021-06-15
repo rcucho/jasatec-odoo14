@@ -53,6 +53,14 @@
                     
                     <div class="oe_structure"/>
                 </div>
+                
+                <div style="position:absolute;top:850px; page-break-inside: avoid;">
+                    <span>
+                        <b><u>RESUMEN DE ESTADO DE ARRENDAMIENTO DE EQUIPOS</u></b><br/>
+                        <br/><b>CONTRATO DE SERVICIO DE ARRENDAMIENTO DE EQUIPAMENTO</b><br/>
+                        Lima, <span t-esc="o.date_order.strftime('%m de %B de %Y')"/>
+                    </span>
+                </div>
             </t>
         </template>
         
