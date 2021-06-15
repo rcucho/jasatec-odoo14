@@ -17,6 +17,7 @@
         'views/view_project_task.xml',
         'views/report_jasatec_contract.xml',
         'report/report_sale_contract.xml',
+        'report/report_sale_arrendamiento.xml',
     ],
     'installable': True,
     'auto_install': False,
