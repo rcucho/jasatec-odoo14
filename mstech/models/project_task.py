@@ -43,15 +43,20 @@ class FormulariosColumnaConectada(models.Model):
     fecha_inicio = fields.Date(string='Fecha de inicio de tarea', compute='_onchange_fecha_inicio')
     fecha_fin = fields.Date(string="Fecha fin de Tarea", compute='_onchange_fecha_fin')
     nombre_titulo = fields.Char(string="Titulo de Tarea", readonly=True, compute='_onchange_nombre_titulo')
-    mov_herramienta = fields.Many2many(comodel_name='stock.picking', relation='relation_task_herramienta', column1='project_task_id', column2='stock_picking_id', 
-                                       string='Herramientas')#, compute='_compute_mov_herramienta')
+    #mov_herramienta = fields.Many2many(comodel_name='stock.picking', relation='relation_task_herramienta', column1='project_task_id', column2='stock_picking_id', 
+                                       #string='Herramientas'), compute='_compute_mov_herramienta')
     task_picking = fields.One2many('stock.picking','picking_task', string="Herram.")#, compute = '_compute_task_picking', readonly=False)
     #---------------------------------------------------------------------------------------------
     
-    def _compute_mov_herramienta(self):
+    #def _compute_mov_herramienta(self):
+        #for record in self:
+            #record.mov_herramienta.partner_id = record.partner_id
+            #record.mov_herramienta.picking_type_id.code = 'internal'    
+    @api.onchange('timesheets_ids_ref')
+    def _compute_timesheets_ids_ref(self):
         for record in self:
-            record.mov_herramienta.partner_id = record.partner_id
-            record.mov_herramienta.picking_type_id.code = 'internal'    
+            if record.timesheets_ids_ref:
+                record.timesheets_ids_ref = record.timesheets_ids
     
     @api.onchange('sale_line_id')
     def _compute_sale_line_product(self):
