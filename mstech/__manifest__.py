@@ -16,7 +16,6 @@
     'data': [
         'views/view_project_task.xml',
         'views/report_jasatec_contract.xml',
-        #'views/project_task_herramientas_tree_editable_view.xml',
         'report/report_sale_contract.xml',
     ],
     'installable': True,
