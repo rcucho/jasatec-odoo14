@@ -53,7 +53,7 @@ class FormulariosColumnaConectada(models.Model):
             record.mov_herramienta.partner_id = record.partner_id
             record.mov_herramienta.picking_type_id.code = 'internal'    
     
-    #@api.onchange('sale_line_id')
+    @api.onchange('sale_line_id')
     def _compute_sale_line_product(self):
         for record in self:
             tareas = record.project_id.task_ids
