@@ -52,11 +52,11 @@ class FormulariosColumnaConectada(models.Model):
         #for record in self:
             #record.mov_herramienta.partner_id = record.partner_id
             #record.mov_herramienta.picking_type_id.code = 'internal'    
-    @api.onchange('timesheets_ids_ref')
+    @api.onchange('timesheet_ids')
     def _compute_timesheets_ids_ref(self):
         for record in self:
             if record.timesheets_ids_ref:
-                record.timesheets_ids_ref = record.timesheets_ids
+                record.timesheets_ids_ref = record.timesheet_ids
     
     @api.onchange('sale_line_id')
     def _compute_sale_line_product(self):
