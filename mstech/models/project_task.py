@@ -61,7 +61,7 @@ class FormulariosColumnaConectada(models.Model):
     @api.onchange('sale_line_id')
     def _compute_sale_line_product(self):
         for record in self:
-            if sale_line_id:
+            if record.sale_line_id:
                 tareas = record.project_id.task_ids
                 #linea = record.sale_line_id.order_id.order_line
                 sale_task = record.sale_line_id
