@@ -7,6 +7,7 @@
     'website': 'http://www.mstech.pe',
     'depends': [
         'industry_fsm',
+        'industry_fsm_sale',
         'sale',
         'product',
         'stock',
