@@ -189,14 +189,16 @@ class AlquilerSale(models.Model):
     
     def open_pickup(self):
         entre = super().open_pickup()
-        entregado = True
-        devuelto = False
+        for record in self:
+            record.entregado = True
+            record.devuelto = False
         return entre
     
     def open_return(self):
         dev = super().open_return()
-        entregado = False
-        devuelto = True
+        for record in self:
+            record.entregado = False
+            record.devuelto = True
         return dev
     
     
