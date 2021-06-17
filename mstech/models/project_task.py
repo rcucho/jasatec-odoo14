@@ -178,3 +178,25 @@ class StockPickingTask(models.Model):
                 record.button_validate()
                 #record.button_validate()
         return True
+    
+    
+class AlquilerSale(models.Model):
+    _inherit = 'sale.order'
+    
+    entregado = fields.Boolean(string="Equipo Entregado", default=False)
+    devuelto = fields.Boolean(string="Equipo Devuelto",default=False)
+    
+    
+    def open_pickup(self):
+        entre = super().open_pickup()
+        entregado = True
+        devuelto = False
+        return entre
+    
+    def open_return(self):
+        dev = super().open_return()
+        entregado = False
+        devuelto = True
+        return dev
+    
+    
